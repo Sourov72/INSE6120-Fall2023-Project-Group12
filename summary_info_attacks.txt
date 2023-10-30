@@ -1,0 +1,95 @@
+Beast attack (browser exploit against ssl/tls)
+(https://www.invicti.com/blog/web-security/how-the-beast-attack-works/) 
+(https://crashtest-security.com/ssl-beast-attack-tls/):
+------------------------------------------------
+exploit in tls 1.0. takes advantage of symmetric encryption and cipher block chaining. Main weekness is that last block cipher text is used as initial vector to encrypt the next plain text. This attack is fixed in tls 1.1 and tls 1.2
+
+Crime attack (compresssion ratio info leak mass exploitation)
+-------------------------------------------------------------
+occurs by haijacking the session by decrypting the session cookies in tls 1.0.
+takes advantage of tls and spdy header compression. TLS and SPDY compression techniques use DEFLATE algorithm, which eliminates duplicate string by compression
+then encrypt it. The key is obtained by cheating the browser
+and sending encrypted compressed request to genuine website,
+waiting for the HTTP response size and increasing attack with respect to HTTP responses.Hacker repeats the techniques with different values until the key will be obtained. It is one type of brute force attack fixed by disabling the compression mechanism in TLS 1.1 and TLS 1.2.
+
+Breach attack (Browser Reconnaissance and Exfiltration via Adaptive Compression of Hypertext)
+------------------------------------------------------------------------------------
+
+
+
+
+***************************************
+
+Breach attack(https://en.wikipedia.org/wiki/BREACH) (https://breachattack.com/)
+paper - BREACH: REVIVING THE CRIME ATTACK
+------------
+
+1. announced in 2013, a compression side-channel attack against HTTPS traffic. upgraded version of crime attack 
+
+2. attacks in http responses instead of http requests. 
+
+3.overview: web applications sometimes include sensitive information, like CSRF tokens, in their HTTP responses. Attackers can exploit this by taking advantage of the DEFLATE compression algorithm used in HTTP responses, which benefits from repeated strings to shrink the payload. By injecting a "guess" character by character into a URL parameter and observing the response size, an attacker can deduce the CSRF token's characters. For instance, if the first character of the guess matches the first character of the actual CSRF token, DEFLATE compresses the response more efficiently, serving as an oracle for the attacker. This process is repeated to recover the entire CSRF token. The attack is successful, as demonstrated with Microsoft's Outlook Web Access (OWA), where the entire token can be recovered in a short time with high reliability, making it a security concern.
+
+4. in order to attack to be successful: a web app must: 
+
+• Be served from a server that uses HTTP-level compression
+• Reflect user-input in HTTP response bodies
+• Reflect a secret (such as a CSRF token) in HTTP response bodies
+
+5. Implementation: 
+
+6. Mitigation Techniques:
+• to put user input in a completely different compression context than of application secrets. use of secrets servlet, which serves files that contain secrets such as CSRF tokens but no user-controlled data.
+• disabling compression at http level, but will have drastic impact on performance. 
+• Masking the secrets. Instead of embedding a secret in a page, on each request, generate a one time pad P, and embed (P||(P xor S)) in the page.
+• as it needs many number of requests, we can monitor the volume of traffic, the attack can be slowed down significantly.
+• more aggressive csrf protection. 
+
+Crime attack(https://en.wikipedia.org/wiki/CRIME)
+(https://docs.google.com/presentation/d/11eBmGiHbYcHR9gL5nDyZChu_-lCa2GizeuOfaLU2HOU/edit#slide=id.g1e59c14c_1_5)
+(https://shainer.github.io/crypto/2017/01/02/crime-attack.html)
+paper - 
+---------------------------------------
+
+1. hypthesiszed by Adam Langley in 2011, first demonstrated by Juliano Rizzo and Thai Duong.
+2. its a security vulnerability in HTTPS and SPDY protocol that utilize compression, that can leak the content of secret web cookies. 
+
+3. CRIME, also known as Compression Ratio Info-leak Made Easy, is a security vulnerability affecting HTTPS and SPDY protocols that use compression. This flaw allows attackers to potentially reveal the content of secret web cookies, leading to session hijacking and subsequent cyberattacks. The vulnerability relies on a combination of chosen plaintext attacks and inadvertent information leakage through compression. Attackers can observe changes in the size of compressed data sent by the browser to infer the content of secret cookies. This exploit was first conceived by Adam Langley, demonstrated by security researchers Juliano Rizzo and Thai Duong, and affects various protocols, including SPDY, TLS, and HTTP. It was assigned CVE-2012-4929.
+
+4. Implementation:
+
+5. Mitigation Techniques: 
+• disable data compression at both the client at server ends. disable the compression of spdy requests and tls protocols
+• when setting up a tls connection, compression algo should be choosen a none. 
+• Keep browser updated.
+
+
+
+--------------------------------------------------------------
+I wont work with these attacks anymore
+--------------------------------------------------------------
+
+Logjam()
+paper - https://web.archive.org/web/20210407000440/https://weakdh.org/imperfect-forward-secrecy-ccs15.pdf
+---------------------------------------
+
+1. attack on Diffie-Hellman key exchange protocol.
+2. used number field sieve discrete log algorithm.
+3. mainly attack those servers that use "export-grade" algorithm(using 512bits as prime, as within the reach of NFS(number field sieve))
+4. can 7.8 percent of HTTPS servers among Alexa Top Million domains.
+
+5. Overview: The security of Diffie-Hellman key exchange is based on the presumed difficulty of solving the discrete logarithm problem. The Logjam attack exploited a vulnerability related to weak parameters in widely-used cryptographic groups, allowing attackers to downgrade TLS connections to weaker 512-bit DH export-grade cryptography. This enabled them to intercept and manipulate data in protocols such as HTTPS, SMTPS, and IMAPS. By precomputing data for specific prime groups, the attackers could quickly solve discrete log problems. The vulnerability also extended to 1024-bit Diffie-Hellman primes due to the reuse of primes in many implementations, potentially compromising VPNs and SSH servers. 
+
+6. Implementation: 
+
+7. Mitigation techniques: 
+• use 2048 bits or more as prime number
+• tls servers should disable the export-grade cryptography and carefully vet the diffie-hellman groups
+• use of strong diffie-hellman groups, like elliptic curves. 
+
+Heartbleed(https://en.wikipedia.org/wiki/Heartbleed)
+-------------------------------
+
+
+1. It's a security bug in some outdated version of the openSSL cryptography library, which is an Implementation of the TLS protocol. 
+2. It resulted from improper input validation(due to missing bound checks) in the Implementation of TLS heartbeat extension(The TLS Heartbeat Extension is a feature in the TLS protocol that allows one party (usually the client) to send a "heartbeat" message to the other party (usually the server) to check if the connection is still active. It helps ensure that the connection is alive and data can be exchanged.)
