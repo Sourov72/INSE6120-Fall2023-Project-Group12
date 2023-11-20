@@ -1,0 +1,955 @@
+<?xml version="1.0"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="keywords"
+            content="CVE, CVE List, CVE Records, CVE ID, CVE IDs, CVE Identifier, CVE Identifiers, CVE ID number, CVE ID numbers, CVE number, CVE numbers, CVE Record, CVE Records, CVE Entry, CVE Entries, CVE name, CVEs, CVE-, Reserved but Public, RBP, CVE Numbering Authority, CVE Naming Authority, CNA, CNAs, Root, Top-Level Root, TL-Root, CNA of Last Resort, CNA-LR, Secretariat, Authorized Data Publisher, ADP, CVE Adoption, CVE Automation, CVE Services, CVE JSON, National Vulnerability Database, NVD, Common Vulnerability Scoring System, CVSS, scoring, severity secoring, standard, standards, vulnerability, vulnerabilities, vulnerability management, vulnerability id, vulnerability name, vulnerability naming, vulnerability naming scheme, software flaw, software coding error, software bug, software bugs, firmware, network security, cybersecurity, cyber security, cyber security standards, cybersecurity standards, infosec, information security, information security standards, network security standards, community standards, vulnerability database, security advisory, security advisories, security alerts, vulnerability alerts, zero-day, 0-day, vulnerability assessment and remediation, vulnerability assessment service, vulnerability notification service, intrusion detection service, IDS, intrusion detection and management, intrusion monitoring and response service, intrusion prevention service, IPS, incident management, data/event correlation, firewall, patch management, patches, patching, enterprise information security architecture, SIM, security information management, cloud, cloud security, policy compliance, information security automation, cybersecurity automation, CVE Working Groups, CVE Board, DHS, Cybersecurity and Infrastructure Security Agency, CISA" />
+        <meta name="description"
+            content="The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities." />
+        <meta name="google-site-verification" content="Dk82cCXTLpuQQok4nbpDBxZDpA3ltnSAnnhMqY1XBxI" />
+        <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37948909-1"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-37948909-1');
+            </script>
+  
+        <link href="/css/main.css" rel="stylesheet" type="text/css" />
+        <script src="/includes/jquery-3.2.1.min.js"></script>
+        <script src="/includes/jquery-migrate-3.0.0.min.js"></script>
+		<script src="/includes/browserheight.js" language="JavaScript" type="text/javascript"></script>
+        <link href="/css/print.css" rel="stylesheet" media="print" type="text/css" />
+        <title>CVE -
+CVE-2014-3566
+</title>
+    </head>
+    <body>
+        <div id="Page"> 
+            <!--Header-->
+            <div id="Header">
+                <table style="width:100%;border-collapse:collapse" summary="Header Layout Table">
+
+                    <tr> 
+                        <td style="vertical-align:middle; text-align:left; white-space:nowrap; padding-bottom: 0">
+                            <div style="width:170px;">
+                                <a class="none" href="/index.html">
+                                    <img src="/images/cvelogobanner.png" width="206" height="55" alt="CVE" style="border:0" />
+                                </a>
+                                </div>
+                        </td>
+        <td style="vertical-align:top;text-align:center;width:100%">
+                             
+        <div class="alignright" style="float:right;vertical-align:top;">
+        <table style="text-align:right"><tr><td><a target="_blank" href="https://nvd.nist.gov/"><img src="/images/nvd-logo.png" alt="NVD" width="78" height="18" border="0"></a><td width=""></td></tr>
+				<tr><td><strong>Go to for:</strong></td></tr>        
+				<tr><td><a target="_blank" href="https://nvd.nist.gov/vuln-metrics/cvss#">CVSS Scores</a><br><a target="_blank" href="https://nvd.nist.gov/products">CPE Info</a><br></td></tr>
+		</table>
+				
+		</div> 
+
+        <!--Page-->
+        						
+        					
+<head>
+<style>
+.dropbtn {
+    background-color: #ffffff;
+    color: #C8C8C8;
+    padding: 0px 18px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    text-align: left;
+    background-color: #ffffff;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    font-size: 11px;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #cccccc;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="dropdown">
+  <a target="_blank" href="https://www.cve.org/"><button class="dropbtn">CVE List&#9662;</button></a>
+  <div class="dropdown-content">
+    <strong><a href="/cve/search_cve_list.html">CVE List Search</a></strong>
+    <a target="_blank" href="/find/search_tips.html">Search Tips</a>
+    <strong><a target="_blank" href="https://cveform.mitre.org/">CVE Request Web Form</a></strong>
+    <a target="_blank" href="https://www.cve.org/ResourcesSupport/FAQs#pc_cve_request_web_form">Web Form Help</a>
+    <a target="_blank" href="https://www.cve.org/ResourcesSupport/FAQs#pc_cve_request_web_formweb_form_encrypt_requests">PGP Key</a> 
+    <strong><a target="_blank" href="https://www.cve.org/ResourcesSupport/Resources">CVE List Documents &amp; Guidance</a></strong>
+    <a target="_blank" href="https://www.cve.org/Legal/TermsOfUse">Terms of Use</a>
+  </div>  
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="dropdown">
+  <a target="_blank" href="https://www.cve.org/ProgramOrganization/CNAs"><button class="dropbtn">CNAs&#9662;</button></a>
+  <div class="dropdown-content">
+    <strong><a target="_blank" href="https://www.cve.org/ProgramOrganization/CNAs">CVE Numbering Authorities (CNAs)</a></strong>
+    <a target="_blank" href="https://www.cve.org/PartnerInformation/ListofPartners">Participating CNAs</a>
+    <strong><a target="_blank" href="https://www.cve.org/ResourcesSupport/Resources#CVENumberingAuthorities">CNA Documents, Policies &amp; Guidance</a></strong>
+    <a target="_blank" href="https://www.cve.org/ResourcesSupport/AllResources/CNARules">CNA Rules, Version 3.0</a>  
+    <strong><a target="_blank" href="https://www.cve.org/PartnerInformation/Partner#CNA">New CNA Onboarding</a></strong>
+    <a target="_blank" href="https://www.cve.org/ResourcesSupport/Resources#cnaOnboarding">Slides &amp; Videos</a>      
+    <strong><a target="_blank" href="https://www.cve.org/PartnerInformation/Partner#HowToBecomeAPartner">How to Become a CNA</a></strong>
+  </div>
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="dropdown">
+  <a target="_blank" href="https://www.cve.org/ProgramOrganization/WorkingGroups"><button class="dropbtn">WGs&#9662;</button></a>
+  <div class="dropdown-content">
+        <strong><a target="_blank" href="https://www.cve.org/ProgramOrganization/WorkingGroups">CVE Working Groups</a></strong>  
+    <a target="_blank" href="https://www.cve.org/ProgramOrganization/WorkingGroups#AutomationWorkingGroupAWG">Automation (AWG)</a>
+    <a target="_blank" href="https://www.cve.org/ProgramOrganization/WorkingGroups#CNACoordinationWorkingGroupCNACWG">CNA Coordination (CNACWG)</a> 
+    <a target="_blank" href="https://www.cve.org/ProgramOrganization/WorkingGroups#OutreachandCommunicationsWorkingGroupOCWG">Outreach and Communications (OCWG)</a>     
+    <a target="_blank" href="https://www.cve.org/ProgramOrganization/WorkingGroups#QualityWorkingGroupQWG">CVE Quality (QWG)</a>           
+    <a target="_blank" href="https://www.cve.org/ProgramOrganization/WorkingGroups#StrategicPlanningWorkingGroupSPWG">Strategic Planning (SPWG)</a>
+    <a target="_blank" href="https://www.cve.org/ProgramOrganization/WorkingGroups#TacticalWorkingGroup">Tactical (TWG)</a>
+  </div>
+  </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="dropdown">
+  <a target="_blank" href="https://www.cve.org/ProgramOrganization/Board"><button class="dropbtn">Board&#9662;</button></a>
+  <div class="dropdown-content">
+    <strong><a target="_blank" href="https://www.cve.org/ProgramOrganization/Board">CVE Board</a></strong>
+    <a target="_blank" href="https://www.cve.org/ProgramOrganization/Board#Members">Members</a>
+    <a href="/community/board/archive.html#board_mail_list_archive">Email Archives</a>
+    <a href="/community/board/archive.html#meeting_summaries">Meeting Archives</a>
+    <a target="_blank" href="https://www.cve.org/ProgramOrganization/Board#Resources">Board Charter</a>
+  </div>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="dropdown">
+  <a target="_blank" href="https://www.cve.org/About/Overview"><button class="dropbtn">About&#9662;</button></a>
+  <div class="dropdown-content">
+    <strong><a target="_blank" href="https://www.cve.org/About/Overview">About CVE</a></strong>
+    <a target="_blank" href="https://www.cve.org/ResourcesSupport/AllResources/ProfessionalCodeOfConduct">Professional Code of Conduct</a>
+    <a target="_blank" href="https://www.cve.org/ResourcesSupport/FAQs#pc_introcve_nvd_relationship">CVE &amp; NVD Relationship</a>
+    <a target="_blank" href="https://www.cve.org/About/History">History</a>
+    <a target="_blank" href="https://www.cve.org/ResourcesSupport/FAQs#pc_introwho_owns_cve">Sponsor</a>
+    <strong><a target="_blank" href="https://www.cve.org/ResourcesSupport/Resources">Documentation &amp; Guidance</a></strong>
+    <a target="_blank" href="https://www.cve.org/ResourcesSupport/FAQs">FAQs</a>
+    <a target="_blank" href="https://www.cve.org/ResourcesSupport/Glossary">Terminology</a>
+  </div>
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="dropdown">
+  <a target="_blank" href="https://www.cve.org/Media/News/AllNews"><button class="dropbtn">News &amp; Blog&#9662;</button></a>
+  <div class="dropdown-content">
+    <a target="_blank" href="https://www.cve.org/Media/News/AllNews">Latest CVE News</a>
+    <a target="_blank" href="https://www.cve.org/Media/News/Blogs">Blog</a>
+    <a target="_blank" href="https://www.cve.org/Media/News/Podcasts">Podcast</a>
+    <a target="_blank" href="https://www.cve.org/Media/Events">Calendar</a> 
+    <a href="/news/archives/index.html">Archive</a>
+    <strong><a href="/cve/data_feeds.html">Follow CVE</a></strong>    
+    <a href="https://www.cve.org/Media/News/NewsletterSignup">Free CVE Newsletter</a>
+    <a target="_blank" href="https://twitter.com/CVEnew/">CVEnew Twitter Feed <img src="/images/twitter.jpg" width="14" height="14" border="0" alt="Twitter"></a>
+    <a target="_blank" href="https://twitter.com/CVEannounce/">CVEannounce Twitter Feed <img src="/images/twitter.jpg" width="14" height="14" border="0" alt="Twitter"></a>
+    <a target="_blank" href="https://medium.com/@CVE_Program">CVE on Medium <img src="/images/medium.png" width="14" height="14" border="0" alt="Medium"></a>        
+    <a target="_blank" href="https://www.linkedin.com/company/cve-program">CVE on LinkedIn <img src="/images/linkedin.jpg" width="14" height="14"  border="0" alt="LinkedIn"></a>
+    <a target="_blank" href="https://github.com/CVEProject">CVEProject on GitHub <img src="/images/GitHub_round_sm" alt="GitHub" width="14" height="14" border="0" title="GitHub"></a>    
+    <a target="_blank" href="https://www.youtube.com/channel/UCUHd2XFDsKH8kjMZQaSKpDQ/">CVE on YouTube <img src="/images/youtube.png" alt="YouTube" width="16" height="14" border="0" title="YouTube"></a>  
+  </div> 
+  </div>
+</div>
+</body>
+                                    
+                                    
+        <!--Page-->
+        						
+        						</div>
+
+                                    
+                                <div style="width:50%;"><p><a href="/index.html"></a></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="vertical-align:top">
+                        <!--NavBar-->
+                        <div id="NavBar" class="noprint">
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        <div class="NavSection"><a href="/cve/search_cve_list.html">Search CVE List</a></div> 
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        <div class="NavSection"><a href="https://www.cve.org/Downloads">Downloads</a></div>  
+                        &nbsp; &nbsp; &nbsp; &nbsp; 
+                        <div class="NavSection"><a href="https://www.cve.org/ResourcesSupport/FAQs#pc_cve_list_basicscve_list_data_feeds">Data Feeds</a></div>  
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        <div class="NavSection"><a href="https://www.cve.org/ReportRequest/ReportRequestForNonCNAs#UpdateCVERecord">Update a CVE Record</a> </div>  
+                        &nbsp; &nbsp; &nbsp; &nbsp;   
+                        <div class="NavSection"><a href="https://www.cve.org/ReportRequest/ReportRequestForNonCNAs#RequestCVEID">Request CVE IDs</a></div>
+                        &nbsp; &nbsp; &nbsp; &nbsp;     
+                        </div>
+                        <!--/NavBar-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="vertical-align:top">
+                            <!--HeaderBar-->
+
+                            <div id="HeaderBar" class="noprint"> 
+                            TOTAL CVE Records: <a target="_blank" href="https://www.cve.org/">
+                           
+                            217407</a>
+                            <br><br>
+NOTICE: <span class="ltredbold">Transition to the all-new CVE website at <a target="_blank" href="https://www.cve.org/">WWW.CVE.ORG</a> and <a target="_blank" href="https://www.cve.org/Media/News/item/blog/2022/10/06/CVE-Records-Are-Now-Displayed">CVE Record Format JSON</a> are underway.</span>
+<br><br>
+NOTICE: <span class="ltredbold">Legacy CVE List download formats will be <a target="_blank" href="https://medium.com/@cve_program/legacy-cve-download-formats-will-be-phased-out-beginning-january-1-2024-13de552c9029">phased out beginning January 1, 2024</a>.<br/>New CVE List download format is <a target="_blank" href="https://www.cve.org/Media/News/item/blog/2023/03/29/CVE-Downloads-in-JSON-5-Format">available now</a>.</span>
+                            <br><br>
+                            </div></div>
+                            <!--/HeaderBar-->
+                        </td>
+                    </tr>
+                </table>
+                
+                	<style type="text/css">
+.alignright {
+	text-align: right;
+	font-size: x-small;
+}
+</style>
+
+                <div id="BreadCrumbs" class="noprint">
+
+		<a href="/">Home</a>  &gt;  <a href="/cve/">CVE</a>  &gt;  CVE-2014-3566
+                    &nbsp;</div>
+            </div>
+            <!--/Header-->
+            <!-- begin section menu -->
+            <div id="LeftPane">﻿            </div>
+            <!-- end section menu -->
+            <!-- begin content pane -->
+            <div id="CenterPane"><!--begin Main Content-->
+
+<script src="/includes/printerfriendly.js" language="JavaScript" type="text/javascript">printview();</script>
+<div id="GeneratedTable">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<th colspan="2">CVE-ID</th>
+	</tr>
+	<tr>
+		<td nowrap="nowrap" align="center" valign="top">
+			<h2>CVE-2014-3566</h2>
+		</td>
+		<td valign="top" class="ltgreybackground">
+			<div class="larger"><a href="https://nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3566" target="_blank">Learn more at National Vulnerability Database (NVD)</a></div>
+			<div class="smaller">&bull; CVSS Severity Rating &bull; Fix Information &bull; Vulnerable Software Versions &bull; SCAP Mappings &bull; CPE Information</div>
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2">Description</th>
+	</tr>
+	<tr>
+		<td colspan="2">The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other products, uses nondeterministic CBC padding, which makes it easier for man-in-the-middle attackers to obtain cleartext data via a padding-oracle attack, aka the "POODLE" issue.
+
+</td>
+	</tr>
+	<tr>
+		<th colspan="2">References</th>
+	</tr>
+	<tr>
+		<td colspan="2" class="note">
+			<b>Note:</b> <a href="/data/refs/index.html">References</a> are provided for the convenience of the reader to help distinguish between vulnerabilities. The list is not intended to be complete.
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<ul>
+<li><a target="_blank" href="1031029">MISC:1031029</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031029">URL:http://www.securitytracker.com/id/1031029</a>
+<li><a target="_blank" href="1031039">MISC:1031039</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031039">URL:http://www.securitytracker.com/id/1031039</a>
+<li><a target="_blank" href="1031085">MISC:1031085</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031085">URL:http://www.securitytracker.com/id/1031085</a>
+<li><a target="_blank" href="1031086">MISC:1031086</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031086">URL:http://www.securitytracker.com/id/1031086</a>
+<li><a target="_blank" href="1031087">MISC:1031087</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031087">URL:http://www.securitytracker.com/id/1031087</a>
+<li><a target="_blank" href="1031088">MISC:1031088</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031088">URL:http://www.securitytracker.com/id/1031088</a>
+<li><a target="_blank" href="1031089">MISC:1031089</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031089">URL:http://www.securitytracker.com/id/1031089</a>
+<li><a target="_blank" href="1031090">MISC:1031090</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031090">URL:http://www.securitytracker.com/id/1031090</a>
+<li><a target="_blank" href="1031091">MISC:1031091</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031091">URL:http://www.securitytracker.com/id/1031091</a>
+<li><a target="_blank" href="1031092">MISC:1031092</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031092">URL:http://www.securitytracker.com/id/1031092</a>
+<li><a target="_blank" href="1031093">MISC:1031093</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031093">URL:http://www.securitytracker.com/id/1031093</a>
+<li><a target="_blank" href="1031094">MISC:1031094</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031094">URL:http://www.securitytracker.com/id/1031094</a>
+<li><a target="_blank" href="1031095">MISC:1031095</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031095">URL:http://www.securitytracker.com/id/1031095</a>
+<li><a target="_blank" href="1031096">MISC:1031096</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031096">URL:http://www.securitytracker.com/id/1031096</a>
+<li><a target="_blank" href="1031105">MISC:1031105</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031105">URL:http://www.securitytracker.com/id/1031105</a>
+<li><a target="_blank" href="1031106">MISC:1031106</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031106">URL:http://www.securitytracker.com/id/1031106</a>
+<li><a target="_blank" href="1031107">MISC:1031107</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031107">URL:http://www.securitytracker.com/id/1031107</a>
+<li><a target="_blank" href="1031120">MISC:1031120</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031120">URL:http://www.securitytracker.com/id/1031120</a>
+<li><a target="_blank" href="1031123">MISC:1031123</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031123">URL:http://www.securitytracker.com/id/1031123</a>
+<li><a target="_blank" href="1031124">MISC:1031124</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031124">URL:http://www.securitytracker.com/id/1031124</a>
+<li><a target="_blank" href="1031130">MISC:1031130</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031130">URL:http://www.securitytracker.com/id/1031130</a>
+<li><a target="_blank" href="1031131">MISC:1031131</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031131">URL:http://www.securitytracker.com/id/1031131</a>
+<li><a target="_blank" href="1031132">MISC:1031132</a>
+<li><a target="_blank" href="http://www.securitytracker.com/id/1031132">URL:http://www.securitytracker.com/id/1031132</a>
+<li><a target="_blank" href="20141014 SSL Padding Oracle On Downgraded Legacy Encryption (POODLE) Vulnerability">MISC:20141014 SSL Padding Oracle On Downgraded Legacy Encryption (POODLE) Vulnerability</a>
+<li><a target="_blank" href="http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20141015-poodle">URL:http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20141015-poodle</a>
+<li><a target="_blank" href="59627">MISC:59627</a>
+<li><a target="_blank" href="http://secunia.com/advisories/59627">URL:http://secunia.com/advisories/59627</a>
+<li><a target="_blank" href="60056">MISC:60056</a>
+<li><a target="_blank" href="http://secunia.com/advisories/60056">URL:http://secunia.com/advisories/60056</a>
+<li><a target="_blank" href="60206">MISC:60206</a>
+<li><a target="_blank" href="http://secunia.com/advisories/60206">URL:http://secunia.com/advisories/60206</a>
+<li><a target="_blank" href="60792">MISC:60792</a>
+<li><a target="_blank" href="http://secunia.com/advisories/60792">URL:http://secunia.com/advisories/60792</a>
+<li><a target="_blank" href="60859">MISC:60859</a>
+<li><a target="_blank" href="http://secunia.com/advisories/60859">URL:http://secunia.com/advisories/60859</a>
+<li><a target="_blank" href="61019">MISC:61019</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61019">URL:http://secunia.com/advisories/61019</a>
+<li><a target="_blank" href="61130">MISC:61130</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61130">URL:http://secunia.com/advisories/61130</a>
+<li><a target="_blank" href="61303">MISC:61303</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61303">URL:http://secunia.com/advisories/61303</a>
+<li><a target="_blank" href="61316">MISC:61316</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61316">URL:http://secunia.com/advisories/61316</a>
+<li><a target="_blank" href="61345">MISC:61345</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61345">URL:http://secunia.com/advisories/61345</a>
+<li><a target="_blank" href="61359">MISC:61359</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61359">URL:http://secunia.com/advisories/61359</a>
+<li><a target="_blank" href="61782">MISC:61782</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61782">URL:http://secunia.com/advisories/61782</a>
+<li><a target="_blank" href="61810">MISC:61810</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61810">URL:http://secunia.com/advisories/61810</a>
+<li><a target="_blank" href="61819">MISC:61819</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61819">URL:http://secunia.com/advisories/61819</a>
+<li><a target="_blank" href="61825">MISC:61825</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61825">URL:http://secunia.com/advisories/61825</a>
+<li><a target="_blank" href="61827">MISC:61827</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61827">URL:http://secunia.com/advisories/61827</a>
+<li><a target="_blank" href="61926">MISC:61926</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61926">URL:http://secunia.com/advisories/61926</a>
+<li><a target="_blank" href="61995">MISC:61995</a>
+<li><a target="_blank" href="http://secunia.com/advisories/61995">URL:http://secunia.com/advisories/61995</a>
+<li><a target="_blank" href="70574">MISC:70574</a>
+<li><a target="_blank" href="http://www.securityfocus.com/bid/70574">URL:http://www.securityfocus.com/bid/70574</a>
+<li><a target="_blank" href="APPLE-SA-2014-10-16-1">MISC:APPLE-SA-2014-10-16-1</a>
+<li><a target="_blank" href="http://archives.neohapsis.com/archives/bugtraq/2014-10/0101.html">URL:http://archives.neohapsis.com/archives/bugtraq/2014-10/0101.html</a>
+<li><a target="_blank" href="APPLE-SA-2014-10-16-3">MISC:APPLE-SA-2014-10-16-3</a>
+<li><a target="_blank" href="http://archives.neohapsis.com/archives/bugtraq/2014-10/0103.html">URL:http://archives.neohapsis.com/archives/bugtraq/2014-10/0103.html</a>
+<li><a target="_blank" href="APPLE-SA-2014-10-16-4">MISC:APPLE-SA-2014-10-16-4</a>
+<li><a target="_blank" href="http://www.securityfocus.com/archive/1/533724/100/0/threaded">URL:http://www.securityfocus.com/archive/1/533724/100/0/threaded</a>
+<li><a target="_blank" href="APPLE-SA-2014-10-20-1">MISC:APPLE-SA-2014-10-20-1</a>
+<li><a target="_blank" href="http://www.securityfocus.com/archive/1/533747">URL:http://www.securityfocus.com/archive/1/533747</a>
+<li><a target="_blank" href="APPLE-SA-2014-10-20-2">MISC:APPLE-SA-2014-10-20-2</a>
+<li><a target="_blank" href="http://www.securityfocus.com/archive/1/533746">URL:http://www.securityfocus.com/archive/1/533746</a>
+<li><a target="_blank" href="APPLE-SA-2015-01-27-4">MISC:APPLE-SA-2015-01-27-4</a>
+<li><a target="_blank" href="http://lists.apple.com/archives/security-announce/2015/Jan/msg00003.html">URL:http://lists.apple.com/archives/security-announce/2015/Jan/msg00003.html</a>
+<li><a target="_blank" href="APPLE-SA-2015-09-16-2">MISC:APPLE-SA-2015-09-16-2</a>
+<li><a target="_blank" href="http://lists.apple.com/archives/security-announce/2015/Sep/msg00002.html">URL:http://lists.apple.com/archives/security-announce/2015/Sep/msg00002.html</a>
+<li><a target="_blank" href="DSA-3053">MISC:DSA-3053</a>
+<li><a target="_blank" href="http://www.debian.org/security/2014/dsa-3053">URL:http://www.debian.org/security/2014/dsa-3053</a>
+<li><a target="_blank" href="DSA-3144">MISC:DSA-3144</a>
+<li><a target="_blank" href="http://www.debian.org/security/2015/dsa-3144">URL:http://www.debian.org/security/2015/dsa-3144</a>
+<li><a target="_blank" href="DSA-3147">MISC:DSA-3147</a>
+<li><a target="_blank" href="http://www.debian.org/security/2015/dsa-3147">URL:http://www.debian.org/security/2015/dsa-3147</a>
+<li><a target="_blank" href="DSA-3253">MISC:DSA-3253</a>
+<li><a target="_blank" href="http://www.debian.org/security/2015/dsa-3253">URL:http://www.debian.org/security/2015/dsa-3253</a>
+<li><a target="_blank" href="DSA-3489">MISC:DSA-3489</a>
+<li><a target="_blank" href="http://www.debian.org/security/2016/dsa-3489">URL:http://www.debian.org/security/2016/dsa-3489</a>
+<li><a target="_blank" href="FEDORA-2014-12951">MISC:FEDORA-2014-12951</a>
+<li><a target="_blank" href="http://lists.fedoraproject.org/pipermail/package-announce/2014-November/142330.html">URL:http://lists.fedoraproject.org/pipermail/package-announce/2014-November/142330.html</a>
+<li><a target="_blank" href="FEDORA-2014-13012">MISC:FEDORA-2014-13012</a>
+<li><a target="_blank" href="http://lists.fedoraproject.org/pipermail/package-announce/2014-October/141158.html">URL:http://lists.fedoraproject.org/pipermail/package-announce/2014-October/141158.html</a>
+<li><a target="_blank" href="FEDORA-2014-13069">MISC:FEDORA-2014-13069</a>
+<li><a target="_blank" href="http://lists.fedoraproject.org/pipermail/package-announce/2014-October/141114.html">URL:http://lists.fedoraproject.org/pipermail/package-announce/2014-October/141114.html</a>
+<li><a target="_blank" href="FEDORA-2015-9090">MISC:FEDORA-2015-9090</a>
+<li><a target="_blank" href="http://lists.fedoraproject.org/pipermail/package-announce/2015-October/169374.html">URL:http://lists.fedoraproject.org/pipermail/package-announce/2015-October/169374.html</a>
+<li><a target="_blank" href="FEDORA-2015-9110">MISC:FEDORA-2015-9110</a>
+<li><a target="_blank" href="http://lists.fedoraproject.org/pipermail/package-announce/2015-October/169361.html">URL:http://lists.fedoraproject.org/pipermail/package-announce/2015-October/169361.html</a>
+<li><a target="_blank" href="GLSA-201507-14">MISC:GLSA-201507-14</a>
+<li><a target="_blank" href="https://security.gentoo.org/glsa/201507-14">URL:https://security.gentoo.org/glsa/201507-14</a>
+<li><a target="_blank" href="GLSA-201606-11">MISC:GLSA-201606-11</a>
+<li><a target="_blank" href="https://security.gentoo.org/glsa/201606-11">URL:https://security.gentoo.org/glsa/201606-11</a>
+<li><a target="_blank" href="HPSBGN03164">MISC:HPSBGN03164</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141577350823734&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141577350823734&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03191">MISC:HPSBGN03191</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141576815022399&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141576815022399&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03192">MISC:HPSBGN03192</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141620103726640&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141620103726640&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03201">MISC:HPSBGN03201</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141697638231025&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141697638231025&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03202">MISC:HPSBGN03202</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141703183219781&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141703183219781&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03203">MISC:HPSBGN03203</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141697676231104&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141697676231104&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03205">MISC:HPSBGN03205</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141775427104070&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141775427104070&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03208">MISC:HPSBGN03208</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141814011518700&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141814011518700&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03209">MISC:HPSBGN03209</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141715130023061&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141715130023061&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03222">MISC:HPSBGN03222</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141813976718456&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141813976718456&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03233">MISC:HPSBGN03233</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142118135300698&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142118135300698&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03237">MISC:HPSBGN03237</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142296755107581&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142296755107581&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03251">MISC:HPSBGN03251</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142354438527235&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142354438527235&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03252">MISC:HPSBGN03252</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142350743917559&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142350743917559&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03253">MISC:HPSBGN03253</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142350196615714&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142350196615714&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03254">MISC:HPSBGN03254</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142350298616097&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142350298616097&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03255">MISC:HPSBGN03255</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142357976805598&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142357976805598&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03305">MISC:HPSBGN03305</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142962817202793&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142962817202793&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03332">MISC:HPSBGN03332</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143290371927178&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143290371927178&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03391">MISC:HPSBGN03391</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=144294141001552&w=2">URL:http://marc.info/?l=bugtraq&amp;m=144294141001552&amp;w=2</a>
+<li><a target="_blank" href="HPSBGN03569">MISC:HPSBGN03569</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=145983526810210&w=2">URL:http://marc.info/?l=bugtraq&amp;m=145983526810210&amp;w=2</a>
+<li><a target="_blank" href="HPSBHF03156">MISC:HPSBHF03156</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141450973807288&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141450973807288&amp;w=2</a>
+<li><a target="_blank" href="HPSBHF03275">MISC:HPSBHF03275</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142721887231400&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142721887231400&amp;w=2</a>
+<li><a target="_blank" href="HPSBHF03293">MISC:HPSBHF03293</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142660345230545&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142660345230545&amp;w=2</a>
+<li><a target="_blank" href="HPSBHF03300">MISC:HPSBHF03300</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142804214608580&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142804214608580&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03152">MISC:HPSBMU03152</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141450452204552&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141450452204552&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03183">MISC:HPSBMU03183</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141628688425177&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141628688425177&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03184">MISC:HPSBMU03184</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141577087123040&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141577087123040&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03214">MISC:HPSBMU03214</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141694355519663&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141694355519663&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03221">MISC:HPSBMU03221</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141879378918327&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141879378918327&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03223">MISC:HPSBMU03223</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143290583027876&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143290583027876&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03234">MISC:HPSBMU03234</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143628269912142&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143628269912142&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03241">MISC:HPSBMU03241</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143039249603103&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143039249603103&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03259">MISC:HPSBMU03259</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142624619906067&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142624619906067&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03260">MISC:HPSBMU03260</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142495837901899&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142495837901899&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03261">MISC:HPSBMU03261</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143290522027658&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143290522027658&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03262">MISC:HPSBMU03262</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142624719706349&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142624719706349&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03263">MISC:HPSBMU03263</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143290437727362&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143290437727362&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03267">MISC:HPSBMU03267</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142624590206005&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142624590206005&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03283">MISC:HPSBMU03283</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142624679706236&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142624679706236&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03294">MISC:HPSBMU03294</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142740155824959&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142740155824959&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03301">MISC:HPSBMU03301</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142721830231196&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142721830231196&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03304">MISC:HPSBMU03304</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142791032306609&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142791032306609&amp;w=2</a>
+<li><a target="_blank" href="HPSBMU03416">MISC:HPSBMU03416</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=144101915224472&w=2">URL:http://marc.info/?l=bugtraq&amp;m=144101915224472&amp;w=2</a>
+<li><a target="_blank" href="HPSBOV03227">MISC:HPSBOV03227</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142103967620673&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142103967620673&amp;w=2</a>
+<li><a target="_blank" href="HPSBPI03107">MISC:HPSBPI03107</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143558137709884&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143558137709884&amp;w=2</a>
+<li><a target="_blank" href="HPSBPI03360">MISC:HPSBPI03360</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143558192010071&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143558192010071&amp;w=2</a>
+<li><a target="_blank" href="HPSBST03195">MISC:HPSBST03195</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142805027510172&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142805027510172&amp;w=2</a>
+<li><a target="_blank" href="HPSBST03265">MISC:HPSBST03265</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142546741516006&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142546741516006&amp;w=2</a>
+<li><a target="_blank" href="HPSBST03418">MISC:HPSBST03418</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=144251162130364&w=2">URL:http://marc.info/?l=bugtraq&amp;m=144251162130364&amp;w=2</a>
+<li><a target="_blank" href="HPSBUX03162">MISC:HPSBUX03162</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141477196830952&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141477196830952&amp;w=2</a>
+<li><a target="_blank" href="HPSBUX03194">MISC:HPSBUX03194</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143101048219218&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143101048219218&amp;w=2</a>
+<li><a target="_blank" href="HPSBUX03273">MISC:HPSBUX03273</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142496355704097&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142496355704097&amp;w=2</a>
+<li><a target="_blank" href="HPSBUX03281">MISC:HPSBUX03281</a>
+<li><a target="_blank" href="http://h20564.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c04583581">URL:http://h20564.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c04583581</a>
+<li><a target="_blank" href="MDVSA-2014:203">MISC:MDVSA-2014:203</a>
+<li>URL:<s>http://www.mandriva.com/security/advisories?name=MDVSA-2014:203</s> (Obsolete source)
+<li><a target="_blank" href="MDVSA-2015:062">MISC:MDVSA-2015:062</a>
+<li>URL:<s>http://www.mandriva.com/security/advisories?name=MDVSA-2015:062</s> (Obsolete source)
+<li><a target="_blank" href="NetBSD-SA2014-015">MISC:NetBSD-SA2014-015</a>
+<li><a target="_blank" href="ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2014-015.txt.asc">URL:ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2014-015.txt.asc</a>
+<li><a target="_blank" href="RHSA-2014:1652">MISC:RHSA-2014:1652</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2014-1652.html">URL:http://rhn.redhat.com/errata/RHSA-2014-1652.html</a>
+<li><a target="_blank" href="RHSA-2014:1653">MISC:RHSA-2014:1653</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2014-1653.html">URL:http://rhn.redhat.com/errata/RHSA-2014-1653.html</a>
+<li><a target="_blank" href="RHSA-2014:1692">MISC:RHSA-2014:1692</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2014-1692.html">URL:http://rhn.redhat.com/errata/RHSA-2014-1692.html</a>
+<li><a target="_blank" href="RHSA-2014:1876">MISC:RHSA-2014:1876</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2014-1876.html">URL:http://rhn.redhat.com/errata/RHSA-2014-1876.html</a>
+<li><a target="_blank" href="RHSA-2014:1877">MISC:RHSA-2014:1877</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2014-1877.html">URL:http://rhn.redhat.com/errata/RHSA-2014-1877.html</a>
+<li><a target="_blank" href="RHSA-2014:1880">MISC:RHSA-2014:1880</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2014-1880.html">URL:http://rhn.redhat.com/errata/RHSA-2014-1880.html</a>
+<li><a target="_blank" href="RHSA-2014:1881">MISC:RHSA-2014:1881</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2014-1881.html">URL:http://rhn.redhat.com/errata/RHSA-2014-1881.html</a>
+<li><a target="_blank" href="RHSA-2014:1882">MISC:RHSA-2014:1882</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2014-1882.html">URL:http://rhn.redhat.com/errata/RHSA-2014-1882.html</a>
+<li><a target="_blank" href="RHSA-2014:1920">MISC:RHSA-2014:1920</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2014-1920.html">URL:http://rhn.redhat.com/errata/RHSA-2014-1920.html</a>
+<li><a target="_blank" href="RHSA-2014:1948">MISC:RHSA-2014:1948</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2014-1948.html">URL:http://rhn.redhat.com/errata/RHSA-2014-1948.html</a>
+<li><a target="_blank" href="RHSA-2015:0068">MISC:RHSA-2015:0068</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2015-0068.html">URL:http://rhn.redhat.com/errata/RHSA-2015-0068.html</a>
+<li><a target="_blank" href="RHSA-2015:0079">MISC:RHSA-2015:0079</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2015-0079.html">URL:http://rhn.redhat.com/errata/RHSA-2015-0079.html</a>
+<li><a target="_blank" href="RHSA-2015:0080">MISC:RHSA-2015:0080</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2015-0080.html">URL:http://rhn.redhat.com/errata/RHSA-2015-0080.html</a>
+<li><a target="_blank" href="RHSA-2015:0085">MISC:RHSA-2015:0085</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2015-0085.html">URL:http://rhn.redhat.com/errata/RHSA-2015-0085.html</a>
+<li><a target="_blank" href="RHSA-2015:0086">MISC:RHSA-2015:0086</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2015-0086.html">URL:http://rhn.redhat.com/errata/RHSA-2015-0086.html</a>
+<li><a target="_blank" href="RHSA-2015:0264">MISC:RHSA-2015:0264</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2015-0264.html">URL:http://rhn.redhat.com/errata/RHSA-2015-0264.html</a>
+<li><a target="_blank" href="RHSA-2015:0698">MISC:RHSA-2015:0698</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2015-0698.html">URL:http://rhn.redhat.com/errata/RHSA-2015-0698.html</a>
+<li><a target="_blank" href="RHSA-2015:1545">MISC:RHSA-2015:1545</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2015-1545.html">URL:http://rhn.redhat.com/errata/RHSA-2015-1545.html</a>
+<li><a target="_blank" href="RHSA-2015:1546">MISC:RHSA-2015:1546</a>
+<li><a target="_blank" href="http://rhn.redhat.com/errata/RHSA-2015-1546.html">URL:http://rhn.redhat.com/errata/RHSA-2015-1546.html</a>
+<li><a target="_blank" href="SSRT101739">MISC:SSRT101739</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142118135300698&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142118135300698&amp;w=2</a>
+<li><a target="_blank" href="SSRT101767">MISC:SSRT101767</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141477196830952&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141477196830952&amp;w=2</a>
+<li><a target="_blank" href="SSRT101779">MISC:SSRT101779</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142103967620673&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142103967620673&amp;w=2</a>
+<li><a target="_blank" href="SSRT101790">MISC:SSRT101790</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142721887231400&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142721887231400&amp;w=2</a>
+<li><a target="_blank" href="SSRT101795">MISC:SSRT101795</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142740155824959&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142740155824959&amp;w=2</a>
+<li><a target="_blank" href="SSRT101834">MISC:SSRT101834</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143101048219218&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143101048219218&amp;w=2</a>
+<li><a target="_blank" href="SSRT101838">MISC:SSRT101838</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141814011518700&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141814011518700&amp;w=2</a>
+<li><a target="_blank" href="SSRT101846">MISC:SSRT101846</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142660345230545&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142660345230545&amp;w=2</a>
+<li><a target="_blank" href="SSRT101849">MISC:SSRT101849</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=141879378918327&w=2">URL:http://marc.info/?l=bugtraq&amp;m=141879378918327&amp;w=2</a>
+<li><a target="_blank" href="SSRT101854">MISC:SSRT101854</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142296755107581&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142296755107581&amp;w=2</a>
+<li><a target="_blank" href="SSRT101868">MISC:SSRT101868</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142118135300698&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142118135300698&amp;w=2</a>
+<li><a target="_blank" href="SSRT101892">MISC:SSRT101892</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=143039249603103&w=2">URL:http://marc.info/?l=bugtraq&amp;m=143039249603103&amp;w=2</a>
+<li><a target="_blank" href="SSRT101894">MISC:SSRT101894</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142495837901899&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142495837901899&amp;w=2</a>
+<li><a target="_blank" href="SSRT101896">MISC:SSRT101896</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142350743917559&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142350743917559&amp;w=2</a>
+<li><a target="_blank" href="SSRT101897">MISC:SSRT101897</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142350196615714&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142350196615714&amp;w=2</a>
+<li><a target="_blank" href="SSRT101898">MISC:SSRT101898</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142350298616097&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142350298616097&amp;w=2</a>
+<li><a target="_blank" href="SSRT101899">MISC:SSRT101899</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142354438527235&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142354438527235&amp;w=2</a>
+<li><a target="_blank" href="SSRT101916">MISC:SSRT101916</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142624679706236&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142624679706236&amp;w=2</a>
+<li><a target="_blank" href="SSRT101921">MISC:SSRT101921</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142624719706349&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142624719706349&amp;w=2</a>
+<li><a target="_blank" href="SSRT101922">MISC:SSRT101922</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142624619906067">URL:http://marc.info/?l=bugtraq&amp;m=142624619906067</a>
+<li><a target="_blank" href="SSRT101928">MISC:SSRT101928</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142357976805598&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142357976805598&amp;w=2</a>
+<li><a target="_blank" href="SSRT101951">MISC:SSRT101951</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142496355704097&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142496355704097&amp;w=2</a>
+<li><a target="_blank" href="SSRT101968">MISC:SSRT101968</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142607790919348&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142607790919348&amp;w=2</a>
+<li><a target="_blank" href="SSRT101998">MISC:SSRT101998</a>
+<li><a target="_blank" href="http://marc.info/?l=bugtraq&m=142721830231196&w=2">URL:http://marc.info/?l=bugtraq&amp;m=142721830231196&amp;w=2</a>
+<li><a target="_blank" href="SUSE-SU-2014:1357">MISC:SUSE-SU-2014:1357</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2014-11/msg00001.html">URL:http://lists.opensuse.org/opensuse-security-announce/2014-11/msg00001.html</a>
+<li><a target="_blank" href="SUSE-SU-2014:1361">MISC:SUSE-SU-2014:1361</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2014-11/msg00003.html">URL:http://lists.opensuse.org/opensuse-security-announce/2014-11/msg00003.html</a>
+<li><a target="_blank" href="SUSE-SU-2014:1526">MISC:SUSE-SU-2014:1526</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2014-11/msg00021.html">URL:http://lists.opensuse.org/opensuse-security-announce/2014-11/msg00021.html</a>
+<li><a target="_blank" href="SUSE-SU-2014:1549">MISC:SUSE-SU-2014:1549</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2014-12/msg00002.html">URL:http://lists.opensuse.org/opensuse-security-announce/2014-12/msg00002.html</a>
+<li><a target="_blank" href="SUSE-SU-2015:0336">MISC:SUSE-SU-2015:0336</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00024.html">URL:http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00024.html</a>
+<li><a target="_blank" href="SUSE-SU-2015:0344">MISC:SUSE-SU-2015:0344</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00026.html">URL:http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00026.html</a>
+<li><a target="_blank" href="SUSE-SU-2015:0345">MISC:SUSE-SU-2015:0345</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00027.html">URL:http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00027.html</a>
+<li><a target="_blank" href="SUSE-SU-2015:0376">MISC:SUSE-SU-2015:0376</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00033.html">URL:http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00033.html</a>
+<li><a target="_blank" href="SUSE-SU-2015:0392">MISC:SUSE-SU-2015:0392</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00036.html">URL:http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00036.html</a>
+<li><a target="_blank" href="SUSE-SU-2015:0503">MISC:SUSE-SU-2015:0503</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00018.html">URL:http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00018.html</a>
+<li><a target="_blank" href="SUSE-SU-2015:0578">MISC:SUSE-SU-2015:0578</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00027.html">URL:http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00027.html</a>
+<li><a target="_blank" href="SUSE-SU-2016:1457">MISC:SUSE-SU-2016:1457</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00066.html">URL:http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00066.html</a>
+<li><a target="_blank" href="SUSE-SU-2016:1459">MISC:SUSE-SU-2016:1459</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00000.html">URL:http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00000.html</a>
+<li><a target="_blank" href="TA14-290A">MISC:TA14-290A</a>
+<li><a target="_blank" href="http://www.us-cert.gov/ncas/alerts/TA14-290A">URL:http://www.us-cert.gov/ncas/alerts/TA14-290A</a>
+<li><a target="_blank" href="USN-2486-1">MISC:USN-2486-1</a>
+<li><a target="_blank" href="http://www.ubuntu.com/usn/USN-2486-1">URL:http://www.ubuntu.com/usn/USN-2486-1</a>
+<li><a target="_blank" href="USN-2487-1">MISC:USN-2487-1</a>
+<li><a target="_blank" href="http://www.ubuntu.com/usn/USN-2487-1">URL:http://www.ubuntu.com/usn/USN-2487-1</a>
+<li><a target="_blank" href="VU#577193">MISC:VU#577193</a>
+<li><a target="_blank" href="http://www.kb.cert.org/vuls/id/577193">URL:http://www.kb.cert.org/vuls/id/577193</a>
+<li><a target="_blank" href="[cxf-commits] 20200116 svn commit: r1055336 - in /websites/production/cxf/content: cache/main.pageCache security-advisories.data/CVE-2019-12423.txt.asc security-advisories.data/CVE-2019-17573.txt.asc security-advisories.html">MISC:[cxf-commits] 20200116 svn commit: r1055336 - in /websites/production/cxf/content: cache/main.pageCache security-advisories.data/CVE-2019-12423.txt.asc security-advisories.data/CVE-2019-17573.txt.asc security-advisories.html</a>
+<li><a target="_blank" href="https://lists.apache.org/thread.html/rc774278135816e7afc943dc9fc78eb0764f2c84a2b96470a0187315c%40%3Ccommits.cxf.apache.org%3E">URL:https://lists.apache.org/thread.html/rc774278135816e7afc943dc9fc78eb0764f2c84a2b96470a0187315c%40%3Ccommits.cxf.apache.org%3E</a>
+<li><a target="_blank" href="[cxf-commits] 20200319 svn commit: r1058035 - in /websites/production/cxf/content: cache/main.pageCache security-advisories.data/CVE-2019-17573.txt.asc security-advisories.html">MISC:[cxf-commits] 20200319 svn commit: r1058035 - in /websites/production/cxf/content: cache/main.pageCache security-advisories.data/CVE-2019-17573.txt.asc security-advisories.html</a>
+<li><a target="_blank" href="https://lists.apache.org/thread.html/r36e44ffc1a9b365327df62cdfaabe85b9a5637de102cea07d79b2dbf%40%3Ccommits.cxf.apache.org%3E">URL:https://lists.apache.org/thread.html/r36e44ffc1a9b365327df62cdfaabe85b9a5637de102cea07d79b2dbf%40%3Ccommits.cxf.apache.org%3E</a>
+<li><a target="_blank" href="[cxf-commits] 20200401 svn commit: r1058573 - in /websites/production/cxf/content: cache/main.pageCache index.html security-advisories.data/CVE-2020-1954.txt.asc security-advisories.html">MISC:[cxf-commits] 20200401 svn commit: r1058573 - in /websites/production/cxf/content: cache/main.pageCache index.html security-advisories.data/CVE-2020-1954.txt.asc security-advisories.html</a>
+<li><a target="_blank" href="https://lists.apache.org/thread.html/rff42cfa5e7d75b7c1af0e37589140a8f1999e578a75738740b244bd4%40%3Ccommits.cxf.apache.org%3E">URL:https://lists.apache.org/thread.html/rff42cfa5e7d75b7c1af0e37589140a8f1999e578a75738740b244bd4%40%3Ccommits.cxf.apache.org%3E</a>
+<li><a target="_blank" href="[cxf-commits] 20201112 svn commit: r1067927 - in /websites/production/cxf/content: cache/main.pageCache security-advisories.data/CVE-2020-13954.txt.asc security-advisories.html">MISC:[cxf-commits] 20201112 svn commit: r1067927 - in /websites/production/cxf/content: cache/main.pageCache security-advisories.data/CVE-2020-13954.txt.asc security-advisories.html</a>
+<li><a target="_blank" href="https://lists.apache.org/thread.html/rd49aabd984ed540c8ff7916d4d79405f3fa311d2fdbcf9ed307839a6%40%3Ccommits.cxf.apache.org%3E">URL:https://lists.apache.org/thread.html/rd49aabd984ed540c8ff7916d4d79405f3fa311d2fdbcf9ed307839a6%40%3Ccommits.cxf.apache.org%3E</a>
+<li><a target="_blank" href="[cxf-commits] 20210402 svn commit: r1073270 - in /websites/production/cxf/content: cache/main.pageCache security-advisories.data/CVE-2021-22696.txt.asc security-advisories.html">MISC:[cxf-commits] 20210402 svn commit: r1073270 - in /websites/production/cxf/content: cache/main.pageCache security-advisories.data/CVE-2021-22696.txt.asc security-advisories.html</a>
+<li><a target="_blank" href="https://lists.apache.org/thread.html/rec7160382badd3ef4ad017a22f64a266c7188b9ba71394f0d321e2d4%40%3Ccommits.cxf.apache.org%3E">URL:https://lists.apache.org/thread.html/rec7160382badd3ef4ad017a22f64a266c7188b9ba71394f0d321e2d4%40%3Ccommits.cxf.apache.org%3E</a>
+<li><a target="_blank" href="[cxf-commits] 20210616 svn commit: r1075801 - in /websites/production/cxf/content: cache/main.pageCache index.html security-advisories.data/CVE-2021-30468.txt.asc security-advisories.html">MISC:[cxf-commits] 20210616 svn commit: r1075801 - in /websites/production/cxf/content: cache/main.pageCache index.html security-advisories.data/CVE-2021-30468.txt.asc security-advisories.html</a>
+<li><a target="_blank" href="https://lists.apache.org/thread.html/rfb87e0bf3995e7d560afeed750fac9329ff5f1ad49da365129b7f89e%40%3Ccommits.cxf.apache.org%3E">URL:https://lists.apache.org/thread.html/rfb87e0bf3995e7d560afeed750fac9329ff5f1ad49da365129b7f89e%40%3Ccommits.cxf.apache.org%3E</a>
+<li><a target="_blank" href="[openssl-dev] 20141014 Patch to mitigate CVE-2014-3566 ("POODLE")">MISC:[openssl-dev] 20141014 Patch to mitigate CVE-2014-3566 ("POODLE")</a>
+<li><a target="_blank" href="http://marc.info/?l=openssl-dev&m=141333049205629&w=2">URL:http://marc.info/?l=openssl-dev&amp;m=141333049205629&amp;w=2</a>
+<li><a target="_blank" href="http://advisories.mageia.org/MGASA-2014-0416.html">MISC:http://advisories.mageia.org/MGASA-2014-0416.html</a>
+<li><a target="_blank" href="http://advisories.mageia.org/MGASA-2014-0416.html">URL:http://advisories.mageia.org/MGASA-2014-0416.html</a>
+<li><a target="_blank" href="http://aix.software.ibm.com/aix/efixes/security/openssl_advisory11.asc">MISC:http://aix.software.ibm.com/aix/efixes/security/openssl_advisory11.asc</a>
+<li><a target="_blank" href="http://aix.software.ibm.com/aix/efixes/security/openssl_advisory11.asc">URL:http://aix.software.ibm.com/aix/efixes/security/openssl_advisory11.asc</a>
+<li><a target="_blank" href="http://askubuntu.com/questions/537196/how-do-i-patch-workaround-sslv3-poodle-vulnerability-cve-2014-3566">MISC:http://askubuntu.com/questions/537196/how-do-i-patch-workaround-sslv3-poodle-vulnerability-cve-2014-3566</a>
+<li><a target="_blank" href="http://askubuntu.com/questions/537196/how-do-i-patch-workaround-sslv3-poodle-vulnerability-cve-2014-3566">URL:http://askubuntu.com/questions/537196/how-do-i-patch-workaround-sslv3-poodle-vulnerability-cve-2014-3566</a>
+<li><a target="_blank" href="http://blog.cryptographyengineering.com/2014/10/attack-of-week-poodle.html">MISC:http://blog.cryptographyengineering.com/2014/10/attack-of-week-poodle.html</a>
+<li><a target="_blank" href="http://blog.cryptographyengineering.com/2014/10/attack-of-week-poodle.html">URL:http://blog.cryptographyengineering.com/2014/10/attack-of-week-poodle.html</a>
+<li><a target="_blank" href="http://blog.nodejs.org/2014/10/23/node-v0-10-33-stable/">MISC:http://blog.nodejs.org/2014/10/23/node-v0-10-33-stable/</a>
+<li><a target="_blank" href="http://blog.nodejs.org/2014/10/23/node-v0-10-33-stable/">URL:http://blog.nodejs.org/2014/10/23/node-v0-10-33-stable/</a>
+<li><a target="_blank" href="http://blogs.technet.com/b/msrc/archive/2014/10/14/security-advisory-3009008-released.aspx">MISC:http://blogs.technet.com/b/msrc/archive/2014/10/14/security-advisory-3009008-released.aspx</a>
+<li><a target="_blank" href="http://blogs.technet.com/b/msrc/archive/2014/10/14/security-advisory-3009008-released.aspx">URL:http://blogs.technet.com/b/msrc/archive/2014/10/14/security-advisory-3009008-released.aspx</a>
+<li><a target="_blank" href="http://docs.ipswitch.com/MOVEit/DMZ82/ReleaseNotes/MOVEitReleaseNotes82.pdf">MISC:http://docs.ipswitch.com/MOVEit/DMZ82/ReleaseNotes/MOVEitReleaseNotes82.pdf</a>
+<li><a target="_blank" href="http://docs.ipswitch.com/MOVEit/DMZ82/ReleaseNotes/MOVEitReleaseNotes82.pdf">URL:http://docs.ipswitch.com/MOVEit/DMZ82/ReleaseNotes/MOVEitReleaseNotes82.pdf</a>
+<li><a target="_blank" href="http://downloads.asterisk.org/pub/security/AST-2014-011.html">MISC:http://downloads.asterisk.org/pub/security/AST-2014-011.html</a>
+<li><a target="_blank" href="http://downloads.asterisk.org/pub/security/AST-2014-011.html">URL:http://downloads.asterisk.org/pub/security/AST-2014-011.html</a>
+<li><a target="_blank" href="http://googleonlinesecurity.blogspot.com/2014/10/this-poodle-bites-exploiting-ssl-30.html">MISC:http://googleonlinesecurity.blogspot.com/2014/10/this-poodle-bites-exploiting-ssl-30.html</a>
+<li><a target="_blank" href="http://googleonlinesecurity.blogspot.com/2014/10/this-poodle-bites-exploiting-ssl-30.html">URL:http://googleonlinesecurity.blogspot.com/2014/10/this-poodle-bites-exploiting-ssl-30.html</a>
+<li><a target="_blank" href="http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c04779034">MISC:http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c04779034</a>
+<li><a target="_blank" href="http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c04779034">URL:http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c04779034</a>
+<li><a target="_blank" href="http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705">MISC:http://kb.juniper.net/InfoCenter/index?page=content&amp;id=JSA10705</a>
+<li><a target="_blank" href="http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705">URL:http://kb.juniper.net/InfoCenter/index?page=content&amp;id=JSA10705</a>
+<li><a target="_blank" href="http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-3566.html">MISC:http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-3566.html</a>
+<li><a target="_blank" href="http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-3566.html">URL:http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-3566.html</a>
+<li><a target="_blank" href="http://support.apple.com/HT204244">MISC:http://support.apple.com/HT204244</a>
+<li><a target="_blank" href="http://support.apple.com/HT204244">URL:http://support.apple.com/HT204244</a>
+<li><a target="_blank" href="http://support.citrix.com/article/CTX200238">MISC:http://support.citrix.com/article/CTX200238</a>
+<li><a target="_blank" href="http://support.citrix.com/article/CTX200238">URL:http://support.citrix.com/article/CTX200238</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=isg3T1021431">MISC:http://www-01.ibm.com/support/docview.wss?uid=isg3T1021431</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=isg3T1021431">URL:http://www-01.ibm.com/support/docview.wss?uid=isg3T1021431</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=isg3T1021439">MISC:http://www-01.ibm.com/support/docview.wss?uid=isg3T1021439</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=isg3T1021439">URL:http://www-01.ibm.com/support/docview.wss?uid=isg3T1021439</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=swg21686997">MISC:http://www-01.ibm.com/support/docview.wss?uid=swg21686997</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=swg21686997">URL:http://www-01.ibm.com/support/docview.wss?uid=swg21686997</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=swg21687172">MISC:http://www-01.ibm.com/support/docview.wss?uid=swg21687172</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=swg21687172">URL:http://www-01.ibm.com/support/docview.wss?uid=swg21687172</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=swg21687611">MISC:http://www-01.ibm.com/support/docview.wss?uid=swg21687611</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=swg21687611">URL:http://www-01.ibm.com/support/docview.wss?uid=swg21687611</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=swg21688283">MISC:http://www-01.ibm.com/support/docview.wss?uid=swg21688283</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=swg21688283">URL:http://www-01.ibm.com/support/docview.wss?uid=swg21688283</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=swg21692299">MISC:http://www-01.ibm.com/support/docview.wss?uid=swg21692299</a>
+<li><a target="_blank" href="http://www-01.ibm.com/support/docview.wss?uid=swg21692299">URL:http://www-01.ibm.com/support/docview.wss?uid=swg21692299</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html">MISC:http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html">URL:http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html">MISC:http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html">URL:http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html">MISC:http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html">URL:http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html">MISC:http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html">URL:http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html">MISC:http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html">URL:http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html">MISC:http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html">URL:http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html">MISC:http://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html">URL:http://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html">MISC:http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html">URL:http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html">MISC:http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html">URL:http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/cpuapr2015-2365600.html">MISC:http://www.oracle.com/technetwork/topics/security/cpuapr2015-2365600.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/cpuapr2015-2365600.html">URL:http://www.oracle.com/technetwork/topics/security/cpuapr2015-2365600.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html">MISC:http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html">URL:http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html">MISC:http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html</a>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html">URL:http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html</a>
+<li><a target="_blank" href="http://www.vmware.com/security/advisories/VMSA-2015-0003.html">MISC:http://www.vmware.com/security/advisories/VMSA-2015-0003.html</a>
+<li><a target="_blank" href="http://www.vmware.com/security/advisories/VMSA-2015-0003.html">URL:http://www.vmware.com/security/advisories/VMSA-2015-0003.html</a>
+<li><a target="_blank" href="http://www.websense.com/support/article/kbarticle/Vulnerabilities-resolved-in-TRITON-APX-Version-8-0">MISC:http://www.websense.com/support/article/kbarticle/Vulnerabilities-resolved-in-TRITON-APX-Version-8-0</a>
+<li><a target="_blank" href="http://www.websense.com/support/article/kbarticle/Vulnerabilities-resolved-in-TRITON-APX-Version-8-0">URL:http://www.websense.com/support/article/kbarticle/Vulnerabilities-resolved-in-TRITON-APX-Version-8-0</a>
+<li><a target="_blank" href="http://www1.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-405500.htm">MISC:http://www1.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-405500.htm</a>
+<li><a target="_blank" href="http://www1.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-405500.htm">URL:http://www1.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-405500.htm</a>
+<li><a target="_blank" href="https://access.redhat.com/articles/1232123">MISC:https://access.redhat.com/articles/1232123</a>
+<li><a target="_blank" href="https://access.redhat.com/articles/1232123">URL:https://access.redhat.com/articles/1232123</a>
+<li><a target="_blank" href="https://blog.mozilla.org/security/2014/10/14/the-poodle-attack-and-the-end-of-ssl-3-0/">MISC:https://blog.mozilla.org/security/2014/10/14/the-poodle-attack-and-the-end-of-ssl-3-0/</a>
+<li><a target="_blank" href="https://blog.mozilla.org/security/2014/10/14/the-poodle-attack-and-the-end-of-ssl-3-0/">URL:https://blog.mozilla.org/security/2014/10/14/the-poodle-attack-and-the-end-of-ssl-3-0/</a>
+<li><a target="_blank" href="https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_openssl6">MISC:https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_openssl6</a>
+<li><a target="_blank" href="https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_openssl6">URL:https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_openssl6</a>
+<li><a target="_blank" href="https://bto.bluecoat.com/security-advisory/sa83">MISC:https://bto.bluecoat.com/security-advisory/sa83</a>
+<li><a target="_blank" href="https://bto.bluecoat.com/security-advisory/sa83">URL:https://bto.bluecoat.com/security-advisory/sa83</a>
+<li><a target="_blank" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1076983">MISC:https://bugzilla.mozilla.org/show_bug.cgi?id=1076983</a>
+<li><a target="_blank" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1076983">URL:https://bugzilla.mozilla.org/show_bug.cgi?id=1076983</a>
+<li><a target="_blank" href="https://bugzilla.redhat.com/show_bug.cgi?id=1152789">MISC:https://bugzilla.redhat.com/show_bug.cgi?id=1152789</a>
+<li><a target="_blank" href="https://bugzilla.redhat.com/show_bug.cgi?id=1152789">URL:https://bugzilla.redhat.com/show_bug.cgi?id=1152789</a>
+<li><a target="_blank" href="https://devcentral.f5.com/articles/cve-2014-3566-removing-sslv3-from-big-ip">MISC:https://devcentral.f5.com/articles/cve-2014-3566-removing-sslv3-from-big-ip</a>
+<li><a target="_blank" href="https://devcentral.f5.com/articles/cve-2014-3566-removing-sslv3-from-big-ip">URL:https://devcentral.f5.com/articles/cve-2014-3566-removing-sslv3-from-big-ip</a>
+<li><a target="_blank" href="https://github.com/mpgn/poodle-PoC">MISC:https://github.com/mpgn/poodle-PoC</a>
+<li><a target="_blank" href="https://github.com/mpgn/poodle-PoC">URL:https://github.com/mpgn/poodle-PoC</a>
+<li><a target="_blank" href="https://groups.google.com/forum/#%21topic/docker-user/oYm0i3xShJU">MISC:https://groups.google.com/forum/#%21topic/docker-user/oYm0i3xShJU</a>
+<li><a target="_blank" href="https://groups.google.com/forum/#%21topic/docker-user/oYm0i3xShJU">URL:https://groups.google.com/forum/#%21topic/docker-user/oYm0i3xShJU</a>
+<li><a target="_blank" href="https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04819635">MISC:https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04819635</a>
+<li><a target="_blank" href="https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04819635">URL:https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04819635</a>
+<li><a target="_blank" href="https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05068681">MISC:https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05068681</a>
+<li><a target="_blank" href="https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05068681">URL:https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05068681</a>
+<li><a target="_blank" href="https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05157667">MISC:https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05157667</a>
+<li><a target="_blank" href="https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05157667">URL:https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05157667</a>
+<li><a target="_blank" href="https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05301946">MISC:https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05301946</a>
+<li><a target="_blank" href="https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05301946">URL:https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05301946</a>
+<li><a target="_blank" href="https://ics-cert.us-cert.gov/advisories/ICSMA-18-058-02">MISC:https://ics-cert.us-cert.gov/advisories/ICSMA-18-058-02</a>
+<li><a target="_blank" href="https://ics-cert.us-cert.gov/advisories/ICSMA-18-058-02">URL:https://ics-cert.us-cert.gov/advisories/ICSMA-18-058-02</a>
+<li><a target="_blank" href="https://kc.mcafee.com/corporate/index?page=content&id=SB10090">MISC:https://kc.mcafee.com/corporate/index?page=content&amp;id=SB10090</a>
+<li><a target="_blank" href="https://kc.mcafee.com/corporate/index?page=content&id=SB10090">URL:https://kc.mcafee.com/corporate/index?page=content&amp;id=SB10090</a>
+<li><a target="_blank" href="https://kc.mcafee.com/corporate/index?page=content&id=SB10091">MISC:https://kc.mcafee.com/corporate/index?page=content&amp;id=SB10091</a>
+<li><a target="_blank" href="https://kc.mcafee.com/corporate/index?page=content&id=SB10091">URL:https://kc.mcafee.com/corporate/index?page=content&amp;id=SB10091</a>
+<li><a target="_blank" href="https://kc.mcafee.com/corporate/index?page=content&id=SB10104">MISC:https://kc.mcafee.com/corporate/index?page=content&amp;id=SB10104</a>
+<li><a target="_blank" href="https://kc.mcafee.com/corporate/index?page=content&id=SB10104">URL:https://kc.mcafee.com/corporate/index?page=content&amp;id=SB10104</a>
+<li><a target="_blank" href="https://puppet.com/security/cve/poodle-sslv3-vulnerability">MISC:https://puppet.com/security/cve/poodle-sslv3-vulnerability</a>
+<li><a target="_blank" href="https://puppet.com/security/cve/poodle-sslv3-vulnerability">URL:https://puppet.com/security/cve/poodle-sslv3-vulnerability</a>
+<li><a target="_blank" href="https://security.netapp.com/advisory/ntap-20141015-0001/">MISC:https://security.netapp.com/advisory/ntap-20141015-0001/</a>
+<li><a target="_blank" href="https://security.netapp.com/advisory/ntap-20141015-0001/">URL:https://security.netapp.com/advisory/ntap-20141015-0001/</a>
+<li><a target="_blank" href="https://support.apple.com/HT205217">MISC:https://support.apple.com/HT205217</a>
+<li><a target="_blank" href="https://support.apple.com/HT205217">URL:https://support.apple.com/HT205217</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6527">MISC:https://support.apple.com/kb/HT6527</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6527">URL:https://support.apple.com/kb/HT6527</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6529">MISC:https://support.apple.com/kb/HT6529</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6529">URL:https://support.apple.com/kb/HT6529</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6531">MISC:https://support.apple.com/kb/HT6531</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6531">URL:https://support.apple.com/kb/HT6531</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6535">MISC:https://support.apple.com/kb/HT6535</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6535">URL:https://support.apple.com/kb/HT6535</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6536">MISC:https://support.apple.com/kb/HT6536</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6536">URL:https://support.apple.com/kb/HT6536</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6541">MISC:https://support.apple.com/kb/HT6541</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6541">URL:https://support.apple.com/kb/HT6541</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6542">MISC:https://support.apple.com/kb/HT6542</a>
+<li><a target="_blank" href="https://support.apple.com/kb/HT6542">URL:https://support.apple.com/kb/HT6542</a>
+<li><a target="_blank" href="https://support.citrix.com/article/CTX216642">MISC:https://support.citrix.com/article/CTX216642</a>
+<li><a target="_blank" href="https://support.citrix.com/article/CTX216642">URL:https://support.citrix.com/article/CTX216642</a>
+<li><a target="_blank" href="https://support.lenovo.com/product_security/poodle">MISC:https://support.lenovo.com/product_security/poodle</a>
+<li><a target="_blank" href="https://support.lenovo.com/product_security/poodle">URL:https://support.lenovo.com/product_security/poodle</a>
+<li><a target="_blank" href="https://support.lenovo.com/us/en/product_security/poodle">MISC:https://support.lenovo.com/us/en/product_security/poodle</a>
+<li><a target="_blank" href="https://support.lenovo.com/us/en/product_security/poodle">URL:https://support.lenovo.com/us/en/product_security/poodle</a>
+<li><a target="_blank" href="https://technet.microsoft.com/library/security/3009008.aspx">MISC:https://technet.microsoft.com/library/security/3009008.aspx</a>
+<li><a target="_blank" href="https://technet.microsoft.com/library/security/3009008.aspx">URL:https://technet.microsoft.com/library/security/3009008.aspx</a>
+<li><a target="_blank" href="https://www-01.ibm.com/support/docview.wss?uid=swg21688165">MISC:https://www-01.ibm.com/support/docview.wss?uid=swg21688165</a>
+<li><a target="_blank" href="https://www-01.ibm.com/support/docview.wss?uid=swg21688165">URL:https://www-01.ibm.com/support/docview.wss?uid=swg21688165</a>
+<li><a target="_blank" href="https://www.arista.com/en/support/advisories-notices/security-advisories/1015-security-advisory-7">MISC:https://www.arista.com/en/support/advisories-notices/security-advisories/1015-security-advisory-7</a>
+<li><a target="_blank" href="https://www.arista.com/en/support/advisories-notices/security-advisories/1015-security-advisory-7">URL:https://www.arista.com/en/support/advisories-notices/security-advisories/1015-security-advisory-7</a>
+<li><a target="_blank" href="https://www.cloudera.com/documentation/other/security-bulletins/topics/csb_topic_1.html">MISC:https://www.cloudera.com/documentation/other/security-bulletins/topics/csb_topic_1.html</a>
+<li><a target="_blank" href="https://www.cloudera.com/documentation/other/security-bulletins/topics/csb_topic_1.html">URL:https://www.cloudera.com/documentation/other/security-bulletins/topics/csb_topic_1.html</a>
+<li><a target="_blank" href="https://www.dfranke.us/posts/2014-10-14-how-poodle-happened.html">MISC:https://www.dfranke.us/posts/2014-10-14-how-poodle-happened.html</a>
+<li><a target="_blank" href="https://www.dfranke.us/posts/2014-10-14-how-poodle-happened.html">URL:https://www.dfranke.us/posts/2014-10-14-how-poodle-happened.html</a>
+<li><a target="_blank" href="https://www.elastic.co/blog/logstash-1-4-3-released">MISC:https://www.elastic.co/blog/logstash-1-4-3-released</a>
+<li><a target="_blank" href="https://www.elastic.co/blog/logstash-1-4-3-released">URL:https://www.elastic.co/blog/logstash-1-4-3-released</a>
+<li><a target="_blank" href="https://www.imperialviolet.org/2014/10/14/poodle.html">MISC:https://www.imperialviolet.org/2014/10/14/poodle.html</a>
+<li><a target="_blank" href="https://www.imperialviolet.org/2014/10/14/poodle.html">URL:https://www.imperialviolet.org/2014/10/14/poodle.html</a>
+<li><a target="_blank" href="https://www.openssl.org/news/secadv_20141015.txt">MISC:https://www.openssl.org/news/secadv_20141015.txt</a>
+<li><a target="_blank" href="https://www.openssl.org/news/secadv_20141015.txt">URL:https://www.openssl.org/news/secadv_20141015.txt</a>
+<li><a target="_blank" href="https://www.openssl.org/~bodo/ssl-poodle.pdf">MISC:https://www.openssl.org/~bodo/ssl-poodle.pdf</a>
+<li><a target="_blank" href="https://www.openssl.org/~bodo/ssl-poodle.pdf">URL:https://www.openssl.org/~bodo/ssl-poodle.pdf</a>
+<li><a target="_blank" href="https://www.suse.com/support/kb/doc.php?id=7015773">MISC:https://www.suse.com/support/kb/doc.php?id=7015773</a>
+<li><a target="_blank" href="https://www.suse.com/support/kb/doc.php?id=7015773">URL:https://www.suse.com/support/kb/doc.php?id=7015773</a>
+<li><a target="_blank" href="openSUSE-SU-2014:1331">MISC:openSUSE-SU-2014:1331</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2014-10/msg00008.html">URL:http://lists.opensuse.org/opensuse-security-announce/2014-10/msg00008.html</a>
+<li><a target="_blank" href="openSUSE-SU-2015:0190">MISC:openSUSE-SU-2015:0190</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00001.html">URL:http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00001.html</a>
+<li><a target="_blank" href="openSUSE-SU-2016:0640">MISC:openSUSE-SU-2016:0640</a>
+<li><a target="_blank" href="http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00011.html">URL:http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00011.html</a>
+</ul>
+
+		</td>
+	</tr>
+	<tr>
+                <th colspan="2">Assigning CNA</th>
+        </tr>
+        <tr>
+                <td colspan="2">Red Hat, Inc.</td>
+        </tr>
+        <tr>
+		<th colspan="2">Date Record Created</th>
+	</tr>
+	<tr>
+		<td><b>20140514</b></td>
+		<td class="ltgreybackground">
+
+		Disclaimer: The <a href="/about/faqs.html#date_record_created_in_cve_record">record creation date</a> may reflect when
+		the CVE ID was allocated or reserved, and does not
+		necessarily indicate when this vulnerability was
+		discovered, shared with the affected vendor, publicly
+		disclosed, or updated in CVE.
+
+</td>
+	</tr>
+	<tr>
+		<th colspan="2">Phase (Legacy)</th>
+	</tr>
+	<tr>
+		<td colspan="2">Assigned (20140514)</td>
+	</tr>
+	<tr>
+		<th colspan="2">Votes (Legacy)</th>
+	</tr>
+	<tr>
+		<td colspan="2"></td>
+	</tr>
+	<tr>
+		<th colspan="2">Comments (Legacy)</th>
+	</tr>
+	<tr>
+		<td colspan="2"><pre>
+</pre></td>
+	</tr>
+	<tr>
+		<th colspan="2">Proposed (Legacy)</th>
+	</tr>
+	<tr>
+		<td colspan="2">N/A</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="note">
+		This is an record on the <a href="/cve/">CVE List</a>, which provides common identifiers for publicly known cybersecurity vulnerabilities.</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="search">
+			<form style="padding:0px; margin:0px;" method="get" action="/cgi-bin/cvekey.cgi">
+			<label for="keyword"><span class="redbold" style="text-transform:uppercase">Search CVE Using Keywords:</span></label>&nbsp;&nbsp;<input name="keyword" id="keyword" maxlength="100" tabindex="0" type="textarea"></input>
+			<input type="submit" value="Submit"/>
+			</form>
+			<div class="smaller">You can also search by reference using the <a href="/data/refs/index.html">CVE Reference Maps</a>.</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="search">
+			<span style="font-weight:bold">For More Information:</span>&nbsp;&nbsp;<a target="_blank" href="https://cveform.mitre.org/">CVE Request Web Form</a> (select &quot;Other&quot; from dropdown)
+		</td>
+	</tr>
+</table>
+</div>
+<div class="backtop noprint"><a href="#top">Back to top</a></div>
+
+<!--end Main Content-->
+<!--end Main Content-->
+            </div><!-- end content pane -->
+        </div>
+        <!--/Page-->
+                <!--Footer-->
+                <div id="FootPane" class="noprint">
+        <div id="Footer">
+            <table>
+                <tr>
+                    <td>
+                    <div class="noprint" style="text-align:center; padding-top:2px">
+                           <p><b>
+                            <a href="/sitemap.html">Site Map</a> | 
+                            <a target="_blank" href="https://www.cve.org/Legal/TermsOfUse">Terms of Use</a> |
+                            <a target="_blank" href="https://www.cve.org/Legal/PrivacyPolicy">Privacy Policy</a> |
+                            <a target="_blank" href="https://cveform.mitre.org/">Contact Us</a> | 
+                           Follow CVE</b>&nbsp; 
+                            <a target="_blank" href="https://twitter.com/CVEnew/"><img src="/images/twitter.jpg" width="20" height="20" style="border:0;vertical-align:right;margin-left:3px;margin-right:3px;" alt="Twitter" title="@CVEnew Twitter"></a>   
+                            <a target="_blank" href="https://www.linkedin.com/company/cve-program"><img src="/images/linkedin.jpg" width="20" height="20" style="border:0;vertical-align:right;margin-left:0px;margin-right:3px;" alt="LinkedIn" 
+                            title="CVE on LinkedIn"></a>
+                            <a target="_blank" href="https://github.com/CVEProject"><img src="/images/GitHub_round_sm" width="20" height="20" style="border:0;vertical-align:right;margin-left:0px;margin-right:1px;" alt="GitHub" title="CVEProject on GitHub"></a> 
+                            <a target="_blank" href="https://www.youtube.com/channel/UCUHd2XFDsKH8kjMZQaSKpDQ/"><img src="/images/youtube.png" width="22" height="20" style="border:0;vertical-align:right;margin-left:0px;margin-right:3px;" alt="YouTube" title="CVE on YouTube"></a>                 
+
+                            <a target="_blank" href="https://medium.com/@cve_program"><img src="/images/medium.png" width="20" height="20" style="border:0;vertical-align:right;margin-left:0px;margin-right:3px;" alt="Medium" title="CVE on Medium"></a>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            <a href="/find/index.html"><img src="/images/search_icon.png" width="21" height="21" style="border:0;vertical-align:right;margin-left:0px;margin-right:3px;" title="Search CVE Website"></a>                         
+                            </p>
+                           
+                   </td> 
+                   </tr>
+                   </div>
+                 <tr>
+                    <td>                       
+                         <p>Use of the CVE&reg; List and the associated references from this website are subject to the <a href="/about/termsofuse.html">terms of use</a>.
+                                CVE is sponsored by the <a href="https://www.dhs.gov/" target="_blank">U.S. Department of Homeland Security</a> (DHS) <a href="https://www.dhs.gov/cisa/cybersecurity-division/" target="_blank">Cybersecurity and Infrastructure Security Agency</a> (CISA). Copyright &copy; 1999&ndash;2023, <a
+                                href="https://www.mitre.org/" target="_blank">The MITRE
+                                Corporation</a>. CVE and the CVE logo are registered trademarks of The MITRE Corporation.</p>
+                        </td>        
+                  </tr>
+                  </table>
+
+            <!--/Footer-->
+        </div>
+        </div>
+        
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-37948909-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+        
+    </body>
+</html>
