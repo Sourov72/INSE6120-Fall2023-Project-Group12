@@ -1,0 +1,4137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+
+
+<title>NVD - cve-2013-0169</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<link href="/site-scripts/font-awesome/css/font-awesome.min.css"
+	type="text/css" rel="stylesheet" />
+<link href="/site-media/bootstrap/css/bootstrap.min.css"
+	type="text/css" rel="stylesheet" />
+<link href="/site-media/bootstrap/css/bootstrap-theme.min.css"
+	type="text/css" rel="stylesheet" />
+<link
+	href="/site-scripts/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
+	type="text/css" rel="stylesheet" />
+
+
+<link href="/site-media/css/nist-fonts.css" type="text/css"
+	rel="stylesheet" />
+<link href="/site-media/css/base-style.css" type="text/css"
+	rel="stylesheet" />
+<link href="/site-media/css/media-resize.css" type="text/css"
+	rel="stylesheet" />
+
+
+<meta name="theme-color" content="#000000">
+
+
+<script src="/site-scripts/jquery/dist/jquery.min.js"
+	type="text/javascript"></script>
+<script src="/site-scripts/jquery-visible/jquery.visible.min.js"
+	type="text/javascript"></script>
+<script src="/site-scripts/underscore/underscore-min.js"
+	type="text/javascript"></script>
+<script src="/site-media/bootstrap/js/bootstrap.js"
+	type="text/javascript"></script>
+<script src="/site-scripts/moment/min/moment.min.js"
+	type="text/javascript"></script>
+<script
+	src="/site-scripts/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"
+	type="text/javascript"></script>
+
+
+<script src="/site-media/js/megamenu.js" type="text/javascript"></script>
+<script src="/site-media/js/nist-exit-script.js"
+	type="text/javascript"></script>
+<script src="/site-media/js/forms.js" type="text/javascript"></script>
+
+<script
+	src="/site-media/js/federated-analytics.all.min.js?agency=NIST&amp;subagency=nvd&amp;pua=UA-37115410-41&amp;yt=true"
+	type="text/javascript" id="_fed_an_js_tag"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KKFZP12LQ"></script>
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-4KKFZP12LQ'); </script>
+
+
+<style id="antiClickjack">
+body>* {
+	display: none !important;
+}
+
+#antiClickjack {
+	display: block !important;
+}
+</style>
+<noscript>
+	<style id="antiClickjackNoScript">
+body>* {
+	display: block !important;
+}
+
+#antiClickjack {
+	display: none !important;
+}
+</style>
+</noscript>
+<script type="text/javascript" id="antiClickjackScript">
+	if (self === top) {
+		// no clickjacking
+		var antiClickjack = document.getElementById("antiClickjack");
+		antiClickjack.parentNode.removeChild(antiClickjack);
+	} else {
+		setTimeout(tryForward(), 5000);
+	}
+
+	function tryForward() {
+		top.location = self.location;
+	}
+</script>
+<meta charset="UTF-8">
+
+<link href="/site-media/css/nvd-style.css" type="text/css"
+	rel="stylesheet" />
+<link href="/site-media/images/favicons/apple-touch-icon.png"
+	rel="apple-touch-icon" type="image/png" sizes="180x180" />
+<link href="/site-media/images/favicons/favicon-32x32.png"
+	rel="icon" type="image/png" sizes="32x32" />
+<link href="/site-media/images/favicons/favicon-16x16.png"
+	rel="icon" type="image/png" sizes="16x16" />
+<link href="/site-media/images/favicons/manifest.json"
+	rel="manifest" />
+<link href="/site-media/images/favicons/safari-pinned-tab.svg"
+	rel="mask-icon" color="#000000" />
+<link href="/site-media/images/favicons/favicon.ico"
+	rel="shortcut icon" />
+<meta name="msapplication-config" content="/site-media/images/favicons/browserconfig.xml" />
+<link href="/site-media/images/favicons/favicon.ico"
+	rel="shortcut icon" type="image/x-icon" />
+<link href="/site-media/images/favicons/favicon.ico" rel="icon"
+	type="image/x-icon" />
+<meta charset="UTF-8">
+<script src="/site-media/js/vulnerability/vulnDetail.js"
+	type="text/javascript"></script>
+<script src="/site-media/js/vulnerability/cvssVulnDetail.js"
+	type="text/javascript"></script>
+
+</head>
+<body>
+	<header role="banner" title="Site Banner">
+		<div id="antiClickjack" style="display: none">
+			<h1>You are viewing this page in an unauthorized frame window.</h1>
+			<p>
+		This is a potential security issue, you are being redirected to 
+		<a href="https://nvd.nist.gov">https://nvd.nist.gov</a>
+	</p>
+		</div>
+		<div>
+		<section class="usa-banner" aria-label="Official government website">
+		    <div class="usa-accordion container">
+		        <header class="usa-banner__header">
+		            <noscript>
+		                <p style="font-size: 0.85rem; font-weight: bold;">You have JavaScript disabled. This site requires JavaScript to be enabled for complete site functionality.</p>
+		            </noscript>
+		            <img class="usa-banner__header-flag" 
+		            	src="/site-media/images/usbanner/us_flag_small.png" alt="U.S. flag">
+		            &nbsp;
+		            <span class="usa-banner__header-text">An official website of the United States government</span>
+		
+		            <button id="gov-banner-button" class="usa-accordion__button usa-banner__button" data-toggle="collapse" data-target="#gov-banner" aria-expanded="false" aria-controls="gov-banner">
+		                <span class="usa-banner__button-text">Here's how you know</span>
+		            </button>
+		        </header>
+		        <div class="usa-banner__content usa-accordion__content collapse" role="tabpanel" id="gov-banner" aria-expanded="true">
+		            <div class="row">
+		                <div class="col-md-5 col-sm-12">
+		                    <div class="row">
+		                        <div class="col-sm-2 col-xs-3">
+		                            <img class="usa-banner__icon usa-media-block__img" 
+		                            	src="/site-media/images/usbanner/icon-dot-gov.svg" alt="Dot gov">
+		                        </div>
+		                        <div class="col-sm-10 col-xs-9">
+		                            <p>
+		                                <strong>Official websites use .gov</strong>
+		                                <br>
+		                                A <strong>.gov</strong> website belongs to an official government organization in the United States.
+		                            </p>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="col-md-5 col-sm-12">
+		                    <div class="row">
+		                        <div class="col-sm-2 col-xs-3">
+		                            <img class="usa-banner__icon usa-media-block__img" 
+		                            	src="/site-media/images/usbanner/icon-https.svg" alt="Https">
+		                        </div>
+		                        <div class="col-sm-10 col-xs-9">
+		                        <p>
+		                            <strong>Secure .gov websites use HTTPS</strong>
+		                            <br>
+		                            A <strong>lock</strong> (<img class="usa-banner__lock" 
+		                            	src="/site-media/images/usbanner/lock.svg" alt="Dot gov">) or <strong>https://</strong> means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+		                        </p>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+	</div>
+		<div>
+		<div>
+	<nav id="navbar" class="navbar">
+		<div id="nist-menu-container" class="container">
+			<div class="row">
+				<!-- Brand -->
+				<div class="col-xs-6 col-md-4 navbar-header"
+					style="height:104px">
+					<a class="navbar-brand" 
+						href="https://www.nist.gov" 
+						target="_blank"
+						id="navbar-brand-image"
+						style="padding-top: 36px">
+
+						<img alt="National Institute of Standards and Technology" 
+										src="/site-media/images/nist/nist-logo.svg" 
+										width="110" height="30">
+					</a>
+				</div>
+				<div class="col-xs-6 col-md-8 navbar-nist-logo">
+					<span id="nvd-menu-button" class="pull-right" style="margin-top: 26px"> <a href="#">
+							<span class="fa fa-bars"></span> <span id="nvd-menu-full-text"><span
+								class="hidden-xxs">NVD </span>MENU</span>
+					</a>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-menu-row container">
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div id="main-menu-drop" class="col-lg-12" style="display: none;">
+				<ul>
+
+					<li><a href="/general"> General <span
+							class="expander fa fa-plus" id="nvd-header-menu-general"
+							data-expander-name="general" data-expanded="false"> <span
+								class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="general">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/general/nvd-dashboard">NVD Dashboard</a>
+									</p>
+									<p>
+										<a href="/general/news">News</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/general/email-list">Email List</a>
+									</p>
+									<p>
+										<a href="/general/faq">FAQ</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/general/visualizations">Visualizations</a> 
+									</p>
+									<p>
+										<a href="/general/legal-disclaimer">Legal Disclaimer</a> 
+									</p>
+								</div>
+							</div>
+						</div></li>
+					<li><a href="/vuln"> Vulnerabilities <span
+							class="expander fa fa-plus"
+							id="nvd-header-menu-vulnerabilities"
+							data-expander-name="vulnerabilities" data-expanded="false">
+								<span class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="vulnerabilities">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln/search">Search &amp; Statistics</a>
+									</p>
+									<p>
+										<a href="/vuln/categories">Weakness Types</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln/data-feeds">Legacy Data Feeds</a>
+									</p>
+									<p>
+										<a href="/vuln/vendor-comments">Vendor Comments</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln/cvmap">CVMAP</a>
+									</p>
+								</div>
+							</div>
+						</div></li>
+					<li><a href="/vuln-metrics/cvss#"> Vulnerability Metrics <span
+							class="expander fa fa-plus" id="nvd-header-menu-metrics"
+							data-expander-name="metrics" data-expanded="false"> <span
+								class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="metrics">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln-metrics/cvss/v3-calculator">CVSS V3
+											Calculator</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln-metrics/cvss/v2-calculator">CVSS V2
+											Calculator</a>
+									</p>
+
+								</div>
+								<div class="col-lg-4"></div>
+							</div>
+						</div></li>
+					<li><a href="/products"> Products <span
+							class="expander fa fa-plus" id="nvd-header-menu-products"
+							data-expander-name="products" data-expanded="false"> <span
+								class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="products">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/products/cpe">CPE Dictionary</a>
+									</p>
+									<p>
+										<a href="/products/cpe/search">CPE Search</a>
+									</p>
+
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/products/cpe/statistics">CPE Statistics</a>
+									</p>
+									<p>
+										<a href="/products/swid">SWID</a>
+									</p>
+
+								</div>
+								<div class="col-lg-4"></div>
+							</div>
+						</div></li>
+					<li>
+						<a href="/developers">Developers<span
+								class="expander fa fa-plus" id="nvd-header-menu-developers"
+								data-expander-name="developers" data-expanded="false"> <span
+									class="element-invisible">Expand or Collapse</span>
+							</span>
+						</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="developers">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/developers/start-here">Start Here</a>
+									</p>
+									<p>
+										<a href="/developers/request-an-api-key">Request an API Key</a>
+									</p>
+
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/developers/vulnerabilities">Vulnerabilities</a>
+									</p>
+									<p>
+										<a href="/developers/products">Products</a>
+									</p>
+
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/developers/data-sources">Data Sources</a>
+									</p>
+									<p>
+										<a href="/developers/terms-of-use">Terms of Use</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li><a href="/info"> Contact NVD </a></li>
+					<li><a href="/other"> Other Sites <span
+							class="expander fa fa-plus" id="nvd-header-menu-othersites"
+							data-expander-name="otherSites" data-expanded="false"> <span
+								class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="otherSites">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="https://ncp.nist.gov">Checklist (NCP) Repository</a>
+									</p>
+									<p>
+										<a href="https://ncp.nist.gov/cce">Configurations (CCE)</a>
+									</p>
+									<p>
+										<a href="https://csrc.nist.gov/Projects/risk-management/sp800-53-controls/release-search">800-53 Controls</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a
+											href="https://csrc.nist.gov/projects/scap-validation-program">SCAP
+											Validated Tools</a>
+									</p>
+									<p>
+										<a
+											href="https://csrc.nist.gov/projects/security-content-automation-protocol">SCAP</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a
+											href="https://csrc.nist.gov/projects/united-states-government-configuration-baseline">USGCB</a>
+									</p>
+								</div>
+							</div>
+						</div></li>
+
+					<li><a href="/search"> Search <span
+							class="expander fa fa-plus" id="nvd-header-menu-search"
+							data-expander-name="search" data-expanded="false"> <span
+								class="element-invisible">Expand or Collapse</span>
+						</span>
+					</a>
+						<div style="display: none;" class="sub-menu"
+							data-expander-trigger="search">
+							<div class="row">
+								<div class="col-lg-4">
+									<p>
+										<a href="/vuln/search">Vulnerability Search</a>
+									</p>
+								</div>
+								<div class="col-lg-4">
+									<p>
+										<a href="/products/cpe/search">CPE Search</a>
+									</p>
+								</div>
+							</div>
+						</div></li>
+
+
+
+
+				</ul>
+			</div>
+			<!-- /#mobile-nav-container -->
+		</div>
+
+	</nav>
+	<section id="itl-header" class="has-menu">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-8">
+					<h2 class="hidden-xs hidden-sm">
+						<a href="https://www.nist.gov/itl" target="_blank">Information Technology Laboratory</a>
+					</h2>
+			 		<h1 class="hidden-xs hidden-sm">
+						<a id="nvd-header-link"
+						  href="/">National Vulnerability Database</a>
+					</h1>
+					<h1 class="hidden-xs text-center hidden-md hidden-lg"
+						>National Vulnerability Database</h1>
+					<h1 class="hidden-sm hidden-md hidden-lg text-center"
+						>NVD</h1>
+				
+				</div>
+				<div class="col-sm-12 col-md-4">
+					<a style="width: 100%; text-align: center; display: block;padding-top: 14px">
+						<img id="img-logo-nvd-lg" 
+							alt="National Vulnerability Database" 
+							src="/site-media/images/F_NIST-Logo-NVD-white.svg" 
+							width="500" height="100">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+		
+</div>
+	</div>
+	</header>
+	<main>
+		<div>
+		<div id="body-section" class="container">
+			<div class="row">
+				<ol class="breadcrumb">
+					<li><a href="/vuln" class="CMSBreadCrumbsLink">Vulnerabilities</a></li>
+				</ol>
+			</div>
+			<div>
+	
+		<div>
+    
+		    
+		
+    </div>
+	
+		
+		<div id="vulnDetailPanel">
+			<table id="vulnDetailTableView" style="border-collapse: collapse;">
+				<tr>
+					<td colspan="2">
+
+						<h2 data-testid="page-header">
+							<i class="fa fa-bug fa-flip-vertical"></i><span
+								data-testid="page-header-vuln-id">CVE-2013-0169</span>
+							Detail
+						</h2>
+						<div class="row">
+
+							<div class="col-lg-9 col-md-7 col-sm-12">
+								
+ 
+								<h3 id="vulnDescriptionTitle"
+									data-testid="vuln-description-title">Description </h3>
+									
+								<p data-testid="vuln-description">The TLS protocol 1.1 and 1.2 and the DTLS protocol 1.0 and 1.2, as used in OpenSSL, OpenJDK, PolarSSL, and other products, do not properly consider timing side-channel attacks on a MAC check requirement during the processing of malformed CBC padding, which allows remote attackers to conduct distinguishing attacks and plaintext-recovery attacks via statistical analysis of timing data for crafted packets, aka the &quot;Lucky Thirteen&quot; issue.</p><br/>
+								
+								
+
+								
+								<div id="VulnEvaluatorDiv"
+									data-testid="vuln-evaluator-description-container">
+									<h3>Evaluator Description</h3>
+									<p data-testid="vuln-evaluator-description">Per http://www.openssl.org/news/vulnerabilities.html:
+Fixed in OpenSSL 1.0.1d (Affected 1.0.1c, 1.0.1b, 1.0.1a, 1.0.1) 
+Fixed in OpenSSL 1.0.0k (Affected 1.0.0j, 1.0.0i, 1.0.0g, 1.0.0f, 1.0.0e, 1.0.0d, 1.0.0c, 1.0.0b, 1.0.0a, 1.0.0) 
+Fixed in OpenSSL 0.9.8y (Affected 0.9.8x, 0.9.8w, 0.9.8v, 0.9.8u, 0.9.8t, 0.9.8s, 0.9.8r, 0.9.8q, 0.9.8p, 0.9.8o, 0.9.8n, 0.9.8m, 0.9.8l, 0.9.8k, 0.9.8j, 0.9.8i, 0.9.8h, 0.9.8g, 0.9.8f, 0.9.8d, 0.9.8c, 0.9.8b, 0.9.8a, 0.9.8)
+
+Affected users should upgrade to OpenSSL 1.0.1e, 1.0.0k or 0.9.8y
+(The fix in 1.0.1d wasn't complete, so please use 1.0.1e or later)</p>
+								</div>
+
+								<div id="vulnCvssPanel" data-testid="vuln-cvss-container"
+									class="row bs-callout bs-callout-success cvssVulnDetail">
+									<h3 style="display: inline" title="CVSS is not a measure of risk">Severity</h3>  
+									&ensp;
+									<div id="cvssVulnDetailBtn" class="btn-group">
+										<button id="btn-cvss3" type="button"
+											title="Click here to view CVSS 3.x score"
+											class="btn btn-active btn-lg cvssBtn" value="2.0">CVSS
+											Version 3.x</button>
+										<button id="btn-cvss2" type="button"
+											title="Click here to view CVSS 2.0 score"
+											class="btn btn-default btn-lg cvssBtn" value="3.x">CVSS
+											Version 2.0</button>
+
+										<br /> <br />
+									</div>
+
+
+
+									<div class="container-fluid" id="Vuln3CvssPanel"
+										data-testid="vuln-cvss3-panel">
+										
+										<strong>CVSS 3.x Severity and Metrics:</strong>
+										<div class="row no-gutters">
+											<br />
+
+											<div class="col-lg-3 col-sm-6">
+												<div class="row">
+													<div class="col-lg-3 col-sm-6">
+														<img
+															src="/site-media/images/NVD_NVD_Stack_Plain.svg"
+															class="cvssNvdIcon" alt="NIST CVSS score">
+
+
+													</div>
+													<div class="col-lg-9 col-sm-6">
+														<strong>NIST:</strong>&nbsp;<span class="wrapData"
+															data-testid="vuln-cvss3-source-nvd">NVD</span>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-3 col-sm-6">
+												 <span><strong>Base
+														Score:</strong>&nbsp;<span class="severityDetail"> <a
+														id="Cvss3NistCalculatorAnchorNA"
+														class="label label-default"
+														data-testid="vuln-cvss3-panel-score-na">N/A</a></span></span>
+
+											</div>
+											<div class="col-lg-6 col-sm-12">
+												
+												<span> <span
+													data-testid="vuln-cvss3-nist-vector-na">NVD score
+														not yet provided.</span></span> <input type="hidden"
+													id="nistV3MetricHidden"
+													value="" />
+
+											</div>
+
+
+										</div>
+
+										
+									
+										<div id="cvss3FootNote" class="cvssFootNote" >
+										<br/><br/>
+										 <span id = "cvss3FootNoteSection"><i>NVD Analysts use publicly available information to associate vector strings and CVSS scores. We also display any CVSS information provided within the CVE List from the CNA.</i><br/><br/><i>Note: NVD Analysts have not published a CVSS score for this CVE at this time. NVD Analysts use publicly available information at the time of analysis to associate CVSS vector strings.</i><br/><br/></span>
+										</div>
+									</div>
+
+
+									<div class="container-fluid" id="Vuln2CvssPanel"
+										data-testid="vuln-cvss2-panel" style="display: none">
+										
+										<strong>CVSS 2.0 Severity and Metrics:</strong> <br /> <br />
+										<div class="row no-gutters">
+											<div class="col-lg-3 col-sm-6">
+												<div class="row">
+													<div class="col-lg-3 col-sm-6">
+														<img
+															src="/site-media/images/NVD_NVD_Stack_Plain.svg"
+															class="cvssNvdIcon"
+															alt="National Institute of Standards and Technology">
+													</div>
+													<div class="col-lg-9 col-sm-6">
+														<strong>NIST:</strong>&nbsp;<span
+															data-testid="vuln-cvss2-source-nvd">NVD</span>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-3 col-sm-6">
+												<span><strong>Base
+														Score:</strong>&nbsp;<span class="severityDetail"> <a
+														id="Cvss2CalculatorAnchor"
+														href="/vuln-metrics/cvss/v2-calculator?name=CVE-2013-0169&amp;vector=(AV:N/AC:H/Au:N/C:P/I:N/A:N)&amp;version=2.0&amp;source=NIST" class="label label-low">2.6 LOW</a></span></span>
+												
+
+											</div>
+											<div class="col-lg-6 col-sm-12">
+												<span><strong>Vector:</strong>&nbsp;
+													<span data-testid="vuln-cvss2-panel-vector"
+													class="tooltipCvss2NistMetrics">(AV:N/AC:H/Au:N/C:P/I:N/A:N)</span></span>  <input type="hidden"
+													id="nistV2MetricHidden"
+													value="&lt;span id =&#39;cnaV2Metric&#39; style=&#39;display:none&#39;&gt;&lt;strong style=&#39;font-size:1.2em&#39; &gt;CVSS v2.0 Severity and Metrics:&lt;/strong&gt;&lt;p data-testid=&#39;vuln-cvssv2-score-container&#39;&gt;&lt;strong&gt;Base Score: &lt;/strong&gt;&lt;span data-testid=&#39;vuln-cvssv2-base-score&#39;&gt;2.6  &lt;/span&gt;&lt;span data-testid=&#39;vuln-cvssv2-base-score-severity&#39;&gt;LOW&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;Vector: &lt;/strong&gt;&lt;span data-testid=&#39;vuln-cvssv2-vector&#39;&gt;(AV:N/AC:H/Au:N/C:P/I:N/A:N)&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;Impact Subscore: &lt;/strong&gt;&lt;span data-testid=&#39;vuln-cvssv2-impact-subscore&#39;&gt;2.9&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;Exploitability Subscore: &lt;/strong&gt;&lt;span data-testid=&#39;vuln-cvssv2-exploitability-score&#39;&gt;4.9&lt;/span&gt;&lt;/p&gt;&lt;hr /&gt;&lt;p data-testid=&#39;vuln-cvssv2-metrics-container&#39;&gt;&lt;strong&gt;Access Vector (AV): &lt;/strong&gt;&lt;span data-testid=&#39;vuln-cvssv2-av&#39;&gt;Network&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;Access Complexity (AC): &lt;/strong&gt;&lt;span data-testid=&#39;vuln-cvssv2-ac&#39;&gt;High&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;Authentication (AU): &lt;/strong&gt;&lt;span data-testid=&#39;vuln-cvssv2-au&#39;&gt;None&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;Confidentiality (C): &lt;/strong&gt;&lt;span data-testid=&#39;vuln-cvssv3-c&#39;&gt;Partial&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;Integrity (I): &lt;/strong&gt;&lt;span data-testid=&#39;vuln-cvssv2-i&#39;&gt;None&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;Availability (A): &lt;/strong&gt;&lt;span data-testid=&#39;vuln-cvssv2-a&#39;&gt;None&lt;/span&gt;&lt;br /&gt;&lt;strong&gt;Additional Information: &lt;/strong&gt;&lt;br/&gt;&lt;span data-testid=&#39;vuln-cvssv2-additional&#39;&gt;Allows unauthorized disclosure of information&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/span&gt;" />
+											</div>
+										</div>
+										
+										<div id = "cvss2FootNote" class="cvssFootNote"  >
+										<br/><br/>
+										 <span id = "cvss2FootNoteSection"><i>NVD Analysts use publicly available information to associate vector strings and CVSS scores. We also display any CVSS information provided within the CVE List from the CNA.</i><br/><br/><i>Note: NVD Analysts have published a CVSS score for this CVE based on publicly available information at the time of analysis. The CNA has not provided a score within the CVE List.</i><br/><br/></span>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="row col-sm-12">
+									
+									
+									
+									<div id="vulnHyperlinksPanel">
+										<h3>References to Advisories, Solutions, and Tools</h3>
+										<p>
+											By selecting these links, you will be leaving NIST webspace.
+											We have provided these links to other web sites because they
+											may have information that would be of interest to you. No
+											inferences should be drawn on account of other sites being
+											referenced, or not, from this page. There may be other web
+											sites that are more appropriate for your purpose. NIST does
+											not necessarily endorse the views expressed, or concur with
+											the facts presented on these sites. Further, NIST does not
+											endorse any commercial products that may be mentioned on
+											these sites. Please address comments about this page to <a
+												href="mailto:nvd@nist.gov">nvd@nist.gov</a>.
+										</p>
+
+
+										<table
+											class="table table-striped table-condensed table-bordered detail-table"
+											data-testid="vuln-hyperlinks-table">
+											<thead>
+												<tr>
+													<th>Hyperlink</th>
+													<th>Resource</th>
+												</tr>
+											</thead>
+											<tbody>
+
+												<tr data-testid="vuln-hyperlinks-row-0">
+													<td data-testid="vuln-hyperlinks-link-0"><a
+														href="http://blog.fuseyism.com/index.php/2013/02/20/security-icedtea-2-1-6-2-2-6-2-3-7-for-openjdk-7-released/"
+														target="_blank">http://blog.fuseyism.com/index.php/2013/02/20/security-icedtea-2-1-6-2-2-6-2-3-7-for-openjdk-7-released/</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-0">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-1">
+													<td data-testid="vuln-hyperlinks-link-1"><a
+														href="http://lists.apple.com/archives/security-announce/2013/Sep/msg00002.html"
+														target="_blank">http://lists.apple.com/archives/security-announce/2013/Sep/msg00002.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-1">
+														<span>
+															<span class="badge">Mailing List</span>&nbsp;
+														</span><span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-2">
+													<td data-testid="vuln-hyperlinks-link-2"><a
+														href="http://lists.fedoraproject.org/pipermail/package-announce/2013-April/101366.html"
+														target="_blank">http://lists.fedoraproject.org/pipermail/package-announce/2013-April/101366.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-2">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-3">
+													<td data-testid="vuln-hyperlinks-link-3"><a
+														href="http://lists.opensuse.org/opensuse-security-announce/2013-02/msg00020.html"
+														target="_blank">http://lists.opensuse.org/opensuse-security-announce/2013-02/msg00020.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-3">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-4">
+													<td data-testid="vuln-hyperlinks-link-4"><a
+														href="http://lists.opensuse.org/opensuse-security-announce/2013-03/msg00000.html"
+														target="_blank">http://lists.opensuse.org/opensuse-security-announce/2013-03/msg00000.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-4">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-5">
+													<td data-testid="vuln-hyperlinks-link-5"><a
+														href="http://lists.opensuse.org/opensuse-security-announce/2013-03/msg00002.html"
+														target="_blank">http://lists.opensuse.org/opensuse-security-announce/2013-03/msg00002.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-5">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-6">
+													<td data-testid="vuln-hyperlinks-link-6"><a
+														href="http://lists.opensuse.org/opensuse-security-announce/2013-04/msg00020.html"
+														target="_blank">http://lists.opensuse.org/opensuse-security-announce/2013-04/msg00020.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-6">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-7">
+													<td data-testid="vuln-hyperlinks-link-7"><a
+														href="http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00001.html"
+														target="_blank">http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00001.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-7">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-8">
+													<td data-testid="vuln-hyperlinks-link-8"><a
+														href="http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00027.html"
+														target="_blank">http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00027.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-8">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-9">
+													<td data-testid="vuln-hyperlinks-link-9"><a
+														href="http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00011.html"
+														target="_blank">http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00011.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-9">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-10">
+													<td data-testid="vuln-hyperlinks-link-10"><a
+														href="http://marc.info/?l=bugtraq&amp;m=136396549913849&amp;w=2"
+														target="_blank">http://marc.info/?l=bugtraq&amp;m=136396549913849&amp;w=2</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-10">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-11">
+													<td data-testid="vuln-hyperlinks-link-11"><a
+														href="http://marc.info/?l=bugtraq&amp;m=136432043316835&amp;w=2"
+														target="_blank">http://marc.info/?l=bugtraq&amp;m=136432043316835&amp;w=2</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-11">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-12">
+													<td data-testid="vuln-hyperlinks-link-12"><a
+														href="http://marc.info/?l=bugtraq&amp;m=136439120408139&amp;w=2"
+														target="_blank">http://marc.info/?l=bugtraq&amp;m=136439120408139&amp;w=2</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-12">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-13">
+													<td data-testid="vuln-hyperlinks-link-13"><a
+														href="http://marc.info/?l=bugtraq&amp;m=136733161405818&amp;w=2"
+														target="_blank">http://marc.info/?l=bugtraq&amp;m=136733161405818&amp;w=2</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-13">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-14">
+													<td data-testid="vuln-hyperlinks-link-14"><a
+														href="http://marc.info/?l=bugtraq&amp;m=137545771702053&amp;w=2"
+														target="_blank">http://marc.info/?l=bugtraq&amp;m=137545771702053&amp;w=2</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-14">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-15">
+													<td data-testid="vuln-hyperlinks-link-15"><a
+														href="http://openwall.com/lists/oss-security/2013/02/05/24"
+														target="_blank">http://openwall.com/lists/oss-security/2013/02/05/24</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-15">
+														<span>
+															<span class="badge">Mailing List</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-16">
+													<td data-testid="vuln-hyperlinks-link-16"><a
+														href="http://rhn.redhat.com/errata/RHSA-2013-0587.html"
+														target="_blank">http://rhn.redhat.com/errata/RHSA-2013-0587.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-16">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-17">
+													<td data-testid="vuln-hyperlinks-link-17"><a
+														href="http://rhn.redhat.com/errata/RHSA-2013-0782.html"
+														target="_blank">http://rhn.redhat.com/errata/RHSA-2013-0782.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-17">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-18">
+													<td data-testid="vuln-hyperlinks-link-18"><a
+														href="http://rhn.redhat.com/errata/RHSA-2013-0783.html"
+														target="_blank">http://rhn.redhat.com/errata/RHSA-2013-0783.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-18">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-19">
+													<td data-testid="vuln-hyperlinks-link-19"><a
+														href="http://rhn.redhat.com/errata/RHSA-2013-0833.html"
+														target="_blank">http://rhn.redhat.com/errata/RHSA-2013-0833.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-19">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-20">
+													<td data-testid="vuln-hyperlinks-link-20"><a
+														href="http://rhn.redhat.com/errata/RHSA-2013-1455.html"
+														target="_blank">http://rhn.redhat.com/errata/RHSA-2013-1455.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-20">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-21">
+													<td data-testid="vuln-hyperlinks-link-21"><a
+														href="http://rhn.redhat.com/errata/RHSA-2013-1456.html"
+														target="_blank">http://rhn.redhat.com/errata/RHSA-2013-1456.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-21">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												
+
+												
+
+												
+
+												
+
+												
+
+												
+
+												<tr data-testid="vuln-hyperlinks-row-28">
+													<td data-testid="vuln-hyperlinks-link-28"><a
+														href="http://security.gentoo.org/glsa/glsa-201406-32.xml"
+														target="_blank">http://security.gentoo.org/glsa/glsa-201406-32.xml</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-28">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-29">
+													<td data-testid="vuln-hyperlinks-link-29"><a
+														href="http://support.apple.com/kb/HT5880"
+														target="_blank">http://support.apple.com/kb/HT5880</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-29">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-30">
+													<td data-testid="vuln-hyperlinks-link-30"><a
+														href="http://www-01.ibm.com/support/docview.wss?uid=swg21644047"
+														target="_blank">http://www-01.ibm.com/support/docview.wss?uid=swg21644047</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-30">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-31">
+													<td data-testid="vuln-hyperlinks-link-31"><a
+														href="http://www.debian.org/security/2013/dsa-2621"
+														target="_blank">http://www.debian.org/security/2013/dsa-2621</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-31">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-32">
+													<td data-testid="vuln-hyperlinks-link-32"><a
+														href="http://www.debian.org/security/2013/dsa-2622"
+														target="_blank">http://www.debian.org/security/2013/dsa-2622</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-32">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-33">
+													<td data-testid="vuln-hyperlinks-link-33"><a
+														href="http://www.isg.rhul.ac.uk/tls/TLStiming.pdf"
+														target="_blank">http://www.isg.rhul.ac.uk/tls/TLStiming.pdf</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-33">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-34">
+													<td data-testid="vuln-hyperlinks-link-34"><a
+														href="http://www.kb.cert.org/vuls/id/737740"
+														target="_blank">http://www.kb.cert.org/vuls/id/737740</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-34">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span><span>
+															<span class="badge">US Government Resource</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-35">
+													<td data-testid="vuln-hyperlinks-link-35"><a
+														href="http://www.mandriva.com/security/advisories?name=MDVSA-2013:095"
+														target="_blank">http://www.mandriva.com/security/advisories?name=MDVSA-2013:095</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-35">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-36">
+													<td data-testid="vuln-hyperlinks-link-36"><a
+														href="http://www.matrixssl.org/news.html"
+														target="_blank">http://www.matrixssl.org/news.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-36">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-37">
+													<td data-testid="vuln-hyperlinks-link-37"><a
+														href="http://www.openssl.org/news/secadv_20130204.txt"
+														target="_blank">http://www.openssl.org/news/secadv_20130204.txt</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-37">
+														<span>
+															<span class="badge">Vendor Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-38">
+													<td data-testid="vuln-hyperlinks-link-38"><a
+														href="http://www.oracle.com/technetwork/topics/security/javacpufeb2013update-1905892.html"
+														target="_blank">http://www.oracle.com/technetwork/topics/security/javacpufeb2013update-1905892.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-38">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-39">
+													<td data-testid="vuln-hyperlinks-link-39"><a
+														href="http://www.securityfocus.com/bid/57778"
+														target="_blank">http://www.securityfocus.com/bid/57778</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-39">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span><span>
+															<span class="badge">VDB Entry</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-40">
+													<td data-testid="vuln-hyperlinks-link-40"><a
+														href="http://www.securitytracker.com/id/1029190"
+														target="_blank">http://www.securitytracker.com/id/1029190</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-40">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span><span>
+															<span class="badge">VDB Entry</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-41">
+													<td data-testid="vuln-hyperlinks-link-41"><a
+														href="http://www.splunk.com/view/SP-CAAAHXG"
+														target="_blank">http://www.splunk.com/view/SP-CAAAHXG</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-41">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-42">
+													<td data-testid="vuln-hyperlinks-link-42"><a
+														href="http://www.ubuntu.com/usn/USN-1735-1"
+														target="_blank">http://www.ubuntu.com/usn/USN-1735-1</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-42">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-43">
+													<td data-testid="vuln-hyperlinks-link-43"><a
+														href="http://www.us-cert.gov/cas/techalerts/TA13-051A.html"
+														target="_blank">http://www.us-cert.gov/cas/techalerts/TA13-051A.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-43">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span><span>
+															<span class="badge">US Government Resource</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-44">
+													<td data-testid="vuln-hyperlinks-link-44"><a
+														href="https://cert-portal.siemens.com/productcert/pdf/ssa-556833.pdf"
+														target="_blank">https://cert-portal.siemens.com/productcert/pdf/ssa-556833.pdf</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-44">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-45">
+													<td data-testid="vuln-hyperlinks-link-45"><a
+														href="https://lists.debian.org/debian-lts-announce/2018/09/msg00029.html"
+														target="_blank">https://lists.debian.org/debian-lts-announce/2018/09/msg00029.html</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-45">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-46">
+													<td data-testid="vuln-hyperlinks-link-46"><a
+														href="https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18841"
+														target="_blank">https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18841</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-46">
+														<span>
+															<span class="badge">Tool Signature</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-47">
+													<td data-testid="vuln-hyperlinks-link-47"><a
+														href="https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19016"
+														target="_blank">https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19016</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-47">
+														<span>
+															<span class="badge">Tool Signature</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-48">
+													<td data-testid="vuln-hyperlinks-link-48"><a
+														href="https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19424"
+														target="_blank">https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19424</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-48">
+														<span>
+															<span class="badge">Tool Signature</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-49">
+													<td data-testid="vuln-hyperlinks-link-49"><a
+														href="https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19540"
+														target="_blank">https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19540</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-49">
+														<span>
+															<span class="badge">Tool Signature</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-50">
+													<td data-testid="vuln-hyperlinks-link-50"><a
+														href="https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19608"
+														target="_blank">https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19608</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-50">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-51">
+													<td data-testid="vuln-hyperlinks-link-51"><a
+														href="https://polarssl.org/tech-updates/releases/polarssl-1.2.5-released"
+														target="_blank">https://polarssl.org/tech-updates/releases/polarssl-1.2.5-released</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-51">
+														<span>
+															<span class="badge">Vendor Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-52">
+													<td data-testid="vuln-hyperlinks-link-52"><a
+														href="https://puppet.com/security/cve/cve-2013-0169"
+														target="_blank">https://puppet.com/security/cve/cve-2013-0169</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-52">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-53">
+													<td data-testid="vuln-hyperlinks-link-53"><a
+														href="https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&amp;docId=emr_na-c03883001"
+														target="_blank">https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&amp;docId=emr_na-c03883001</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-53">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+												<tr data-testid="vuln-hyperlinks-row-54">
+													<td data-testid="vuln-hyperlinks-link-54"><a
+														href="https://wiki.mageia.org/en/Support/Advisories/MGASA-2013-0084"
+														target="_blank">https://wiki.mageia.org/en/Support/Advisories/MGASA-2013-0084</a></td>
+
+													<td data-testid="vuln-hyperlinks-resType-54">
+														<span>
+															<span class="badge">Third Party Advisory</span>&nbsp;
+														</span>
+													</td>
+												</tr>
+
+
+
+											</tbody>
+										</table>
+
+
+
+									</div>
+
+									
+
+									<div id="vulnTechnicalDetailsDiv" class="technicalDetails"
+										data-testid="vuln-technical-details-container">
+										<h3>Weakness Enumeration</h3>
+
+
+
+										<table
+											class="table table-striped table-condensed table-bordered detail-table"
+											data-testid="vuln-CWEs-table">
+											<thead>
+												<tr>
+													<th>CWE-ID</th>
+													<th>CWE Name</th>
+													<th>Source</th>
+												</tr>
+											</thead>
+											<tbody>
+
+												<tr data-testid="vuln-CWEs-row-0">
+													<td data-testid="vuln-CWEs-link-0">
+														<a href="http://cwe.mitre.org/data/definitions/310.html" target="_blank">CWE-310</a>
+														
+													</td>
+													<td
+														data-testid="vuln-CWEs-link-0">Cryptographic Issues</td>
+
+													<td data-testid="vuln-cwes-assigner-0">
+														<span class="cweSource" data-testid="vuln-cwes-assigner-0-0"
+														>
+														<img src="/site-media/images/NVD_NVD_Stack_Plain.svg"
+																class="cweNvdIcon"
+																alt="cwe source acceptance level">
+														
+														<span>NIST  </span>
+														</span>
+														
+														</td>
+
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+
+
+
+									<div>
+										<h3>
+											Known Affected Software Configurations <small> <a
+												id="toggleCpeVersion" href="#vulnConfigurationsArea">Switch
+													to CPE 2.2</a></small>
+										</h3>
+										<span id="vulnConfigurationsArea"></span>
+										<input type="hidden" id="cveIdHidden" value="CVE-2013-0169" />
+								
+										 <div>
+	
+   		<div id="vulnCpeTreeLoading"><h3>CPEs loading, please wait.</h3></div>
+        <div id="vulnCpeTree" style="display: none;"></div>
+        <input type="hidden" 
+		       id="InputRestBasePath"
+		       value="/rest/public">	
+        <input type="hidden" id="cveTreeJsonDataHidden" value="[{&quot;id&quot;:1,&quot;dataTestId&quot;:&quot;vuln-software-config-1&quot;,&quot;totalCpeCount&quot;:3,&quot;containers&quot;:[{&quot;negate&quot;:false,&quot;operator&quot;:&quot;OR&quot;,&quot;depth&quot;:1,&quot;dataTestId&quot;:&quot;vuln-software-operator-1-0&quot;,&quot;configType&quot;:&quot;BASIC&quot;,&quot;cpeListType&quot;:&quot;VULNERABLE&quot;,&quot;cpes&quot;:[{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aopenssl%3Aopenssl%3A*%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:openssl:openssl&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-1-0-0&quot;,&quot;id&quot;:&quot;9107893&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot; versions from (including) 0.9.8 up to (including) 0.9.8x &quot;,&quot;rangeStartType&quot;:&quot;including&quot;,&quot;rangeStartVersion&quot;:&quot;0.9.8&quot;,&quot;rangeEndType&quot;:&quot;including&quot;,&quot;rangeEndVersion&quot;:&quot;0.9.8x&quot;,&quot;rangeId&quot;:&quot;303806&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aopenssl%3Aopenssl%3A*%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:openssl:openssl&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-1-0-1&quot;,&quot;id&quot;:&quot;9107892&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot; versions from (including) 1.0.0 up to (including) 1.0.0j &quot;,&quot;rangeStartType&quot;:&quot;including&quot;,&quot;rangeStartVersion&quot;:&quot;1.0.0&quot;,&quot;rangeEndType&quot;:&quot;including&quot;,&quot;rangeEndVersion&quot;:&quot;1.0.0j&quot;,&quot;rangeId&quot;:&quot;303804&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aopenssl%3Aopenssl%3A*%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:openssl:openssl&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-1-0-2&quot;,&quot;id&quot;:&quot;9107894&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot; versions from (including) 1.0.1 up to (including) 1.0.1d &quot;,&quot;rangeStartType&quot;:&quot;including&quot;,&quot;rangeStartVersion&quot;:&quot;1.0.1&quot;,&quot;rangeEndType&quot;:&quot;including&quot;,&quot;rangeEndVersion&quot;:&quot;1.0.1d&quot;,&quot;rangeId&quot;:&quot;303807&quot;,&quot;rangeCpes&quot;:[]}],&quot;containers&quot;:[]}]},{&quot;id&quot;:2,&quot;dataTestId&quot;:&quot;vuln-software-config-2&quot;,&quot;totalCpeCount&quot;:47,&quot;containers&quot;:[{&quot;negate&quot;:false,&quot;operator&quot;:&quot;OR&quot;,&quot;depth&quot;:1,&quot;dataTestId&quot;:&quot;vuln-software-operator-2-0&quot;,&quot;configType&quot;:&quot;BASIC&quot;,&quot;cpeListType&quot;:&quot;VULNERABLE&quot;,&quot;cpes&quot;:[{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3A-%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:-:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:-&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-0&quot;,&quot;id&quot;:&quot;9107936&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate1%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update1:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update1&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-1&quot;,&quot;id&quot;:&quot;9107966&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate10%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update10:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update10&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-2&quot;,&quot;id&quot;:&quot;9107967&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate11%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update11:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update11&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-3&quot;,&quot;id&quot;:&quot;9107943&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate12%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update12:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update12&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-4&quot;,&quot;id&quot;:&quot;9107944&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate13%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update13:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update13&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-5&quot;,&quot;id&quot;:&quot;9107945&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate14%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update14:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update14&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-6&quot;,&quot;id&quot;:&quot;9107946&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate15%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update15:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update15&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-7&quot;,&quot;id&quot;:&quot;9107947&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate16%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update16:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update16&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-8&quot;,&quot;id&quot;:&quot;9107948&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate17%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update17:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update17&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-9&quot;,&quot;id&quot;:&quot;9107949&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate18%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update18:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update18&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-10&quot;,&quot;id&quot;:&quot;9107950&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate19%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update19:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update19&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-11&quot;,&quot;id&quot;:&quot;9107951&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate2%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update2:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update2&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-12&quot;,&quot;id&quot;:&quot;9107937&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate20%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update20:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update20&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-13&quot;,&quot;id&quot;:&quot;9107952&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate21%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update21:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update21&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-14&quot;,&quot;id&quot;:&quot;9107953&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate22%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update22:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update22&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-15&quot;,&quot;id&quot;:&quot;9107954&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate23%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update23:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update23&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-16&quot;,&quot;id&quot;:&quot;9107955&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate24%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update24:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update24&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-17&quot;,&quot;id&quot;:&quot;9107956&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate25%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update25:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update25&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-18&quot;,&quot;id&quot;:&quot;9107957&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate26%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update26:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update26&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-19&quot;,&quot;id&quot;:&quot;9107958&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate27%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update27:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update27&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-20&quot;,&quot;id&quot;:&quot;9107959&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate29%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update29:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update29&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-21&quot;,&quot;id&quot;:&quot;9107960&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate3%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update3:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update3&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-22&quot;,&quot;id&quot;:&quot;9107938&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate30%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update30:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update30&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-23&quot;,&quot;id&quot;:&quot;9107961&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate31%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update31:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update31&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-24&quot;,&quot;id&quot;:&quot;9107962&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate32%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update32:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update32&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-25&quot;,&quot;id&quot;:&quot;9107963&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate33%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update33:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update33&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-26&quot;,&quot;id&quot;:&quot;9107964&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate34%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update34:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update34&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-27&quot;,&quot;id&quot;:&quot;9107932&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate35%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update35:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update35&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-28&quot;,&quot;id&quot;:&quot;9107933&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate37%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update37:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update37&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-29&quot;,&quot;id&quot;:&quot;9107934&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate38%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update38:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update38&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-30&quot;,&quot;id&quot;:&quot;9107935&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate4%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update4:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update4&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-31&quot;,&quot;id&quot;:&quot;9107939&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate5%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update5:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update5&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-32&quot;,&quot;id&quot;:&quot;9107940&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate6%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update6:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update6&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-33&quot;,&quot;id&quot;:&quot;9107941&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.6.0%3Aupdate7%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.6.0:update7:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.6.0:update7&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-34&quot;,&quot;id&quot;:&quot;9107942&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3A-%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:-:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:-&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-35&quot;,&quot;id&quot;:&quot;9107921&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate1%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update1:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update1&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-36&quot;,&quot;id&quot;:&quot;9107965&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate10%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update10:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update10&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-37&quot;,&quot;id&quot;:&quot;9107929&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate11%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update11:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update11&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-38&quot;,&quot;id&quot;:&quot;9107930&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate13%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update13:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update13&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-39&quot;,&quot;id&quot;:&quot;9107931&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate2%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update2:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update2&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-40&quot;,&quot;id&quot;:&quot;9107922&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate3%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update3:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update3&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-41&quot;,&quot;id&quot;:&quot;9107923&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate4%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update4:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update4&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-42&quot;,&quot;id&quot;:&quot;9107924&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate5%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update5:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update5&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-43&quot;,&quot;id&quot;:&quot;9107925&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate6%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update6:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update6&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-44&quot;,&quot;id&quot;:&quot;9107926&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate7%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update7:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update7&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-45&quot;,&quot;id&quot;:&quot;9107927&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Aoracle%3Aopenjdk%3A1.7.0%3Aupdate9%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:oracle:openjdk:1.7.0:update9:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:oracle:openjdk:1.7.0:update9&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-2-0-46&quot;,&quot;id&quot;:&quot;9107928&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]}],&quot;containers&quot;:[]}]},{&quot;id&quot;:3,&quot;dataTestId&quot;:&quot;vuln-software-config-3&quot;,&quot;totalCpeCount&quot;:22,&quot;containers&quot;:[{&quot;negate&quot;:false,&quot;operator&quot;:&quot;OR&quot;,&quot;depth&quot;:1,&quot;dataTestId&quot;:&quot;vuln-software-operator-3-0&quot;,&quot;configType&quot;:&quot;BASIC&quot;,&quot;cpeListType&quot;:&quot;VULNERABLE&quot;,&quot;cpes&quot;:[{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.10.0%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.10.0:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.10.0&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-0&quot;,&quot;id&quot;:&quot;9107920&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.10.1%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.10.1:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.10.1&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-1&quot;,&quot;id&quot;:&quot;9107917&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.11.0%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.11.0:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.11.0&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-2&quot;,&quot;id&quot;:&quot;9107900&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.11.1%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.11.1:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.11.1&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-3&quot;,&quot;id&quot;:&quot;9107907&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.12.0%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.12.0:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.12.0&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-4&quot;,&quot;id&quot;:&quot;9107919&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.12.1%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.12.1:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.12.1&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-5&quot;,&quot;id&quot;:&quot;9107904&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.13.1%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.13.1:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.13.1&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-6&quot;,&quot;id&quot;:&quot;9107902&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.14.0%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.14.0:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.14.0&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-7&quot;,&quot;id&quot;:&quot;9107909&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.14.2%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.14.2:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.14.2&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-8&quot;,&quot;id&quot;:&quot;9107899&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.14.3%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.14.3:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.14.3&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-9&quot;,&quot;id&quot;:&quot;9107913&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.99%3Apre1%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.99:pre1:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.99:pre1&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-10&quot;,&quot;id&quot;:&quot;9107911&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.99%3Apre3%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.99:pre3:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.99:pre3&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-11&quot;,&quot;id&quot;:&quot;9107905&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.99%3Apre4%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.99:pre4:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.99:pre4&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-12&quot;,&quot;id&quot;:&quot;9107918&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A0.99%3Apre5%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:0.99:pre5:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:0.99:pre5&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-13&quot;,&quot;id&quot;:&quot;9107906&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A1.0.0%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:1.0.0:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:1.0.0&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-14&quot;,&quot;id&quot;:&quot;9107901&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A1.1.0%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:1.1.0:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:1.1.0&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-15&quot;,&quot;id&quot;:&quot;9107916&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A1.1.0%3Arc0%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:1.1.0:rc0:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:1.1.0:rc0&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-16&quot;,&quot;id&quot;:&quot;9107915&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A1.1.0%3Arc1%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:1.1.0:rc1:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:1.1.0:rc1&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-17&quot;,&quot;id&quot;:&quot;9107914&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A1.1.1%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:1.1.1:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:1.1.1&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-18&quot;,&quot;id&quot;:&quot;9107910&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A1.1.2%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:1.1.2:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:1.1.2&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-19&quot;,&quot;id&quot;:&quot;9107912&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A1.1.3%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:1.1.3:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:1.1.3&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-20&quot;,&quot;id&quot;:&quot;9107903&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]},{&quot;depth&quot;:2,&quot;vulnerable&quot;:true,&quot;previous&quot;:false,&quot;urlName&quot;:&quot;cpe%3A2.3%3Aa%3Apolarssl%3Apolarssl%3A1.1.4%3A*%3A*%3A*%3A*%3A*%3A*%3A*&quot;,&quot;cpe23Uri&quot;:&quot;cpe:2.3:a:polarssl:polarssl:1.1.4:*:*:*:*:*:*:*&quot;,&quot;cpe22Uri&quot;:&quot;cpe:/a:polarssl:polarssl:1.1.4&quot;,&quot;status&quot;:null,&quot;resultingCpes&quot;:null,&quot;dataTestId&quot;:&quot;vuln-software-cpe-3-0-21&quot;,&quot;id&quot;:&quot;9107908&quot;,&quot;matchCpes&quot;:[],&quot;rangeDescription&quot;:&quot;&quot;,&quot;rangeStartType&quot;:&quot;&quot;,&quot;rangeStartVersion&quot;:&quot;&quot;,&quot;rangeEndType&quot;:&quot;&quot;,&quot;rangeEndVersion&quot;:&quot;&quot;,&quot;rangeId&quot;:&quot;&quot;,&quot;rangeCpes&quot;:[]}],&quot;containers&quot;:[]}]}]"/>
+        
+        <p id="vulnCpeInfo" >
+            <small>           
+                    <i class="fa fa-bug fa-flip-vertical"></i> Denotes Vulnerable Software<br />
+                    <a href="mailto:cpe_dictionary@nist.gov">Are we missing a CPE here?  Please let us know</a>.<br />
+           
+            </small>
+        </p>
+        <script src="/site-media/js/vulnerability/cpe-match.js"
+			type="text/javascript"></script>
+        	<script src="/site-media/js/vulnerability/configurationListing.js"
+			type="text/javascript"></script>
+	</div>
+									</div>
+									
+									<div id="vulnChangeHistoryDiv"
+										data-testid="vuln-change-history-container">
+										<h3 id="VulnChangeHistorySection">Change History</h3>
+										<small> 12 change records found <a href="#VulnChangeHistorySection"
+											style="text-decoration: underline" id="changeHistoryToggle">show changes</a>
+										</small>
+										<div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-0">Modified Analysis by NIST</span> <span
+					data-testid="vuln-change-history-date-0">5/12/2023 8:58:45 AM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-0">
+						<td
+							data-testid="vuln-change-history-0-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-0-type">CPE Configuration</td>
+						<td data-testid="vuln-change-history-0-old">
+							
+							
+							
+								<pre>OR
+     *cpe:2.3:a:oracle:openjdk:-:*:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.6.0:*:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.7.0:*:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.8.0:*:*:*:*:*:*:*</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-0-new">
+							
+								
+								<strong data-testid="vuln-change-history-0-showing"
+								
+								>Record truncated, showing 500 of 2699 characters.</strong> <br/>
+								
+                             <a href="/vuln/detail/CVE-2013-0169/change-record?changeRecordedOn=05/12/2023T08:58:45.013-0400">View Entire Change Record</a><br />
+								<pre>OR
+     *cpe:2.3:a:oracle:openjdk:1.6.0:-:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.6.0:update1:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.6.0:update10:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.6.0:update11:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.6.0:update12:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.6.0:update13:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.6.0:update14:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.6.0:update15:*:*:*:*:*:*
+     *cpe:2.3:a:oracle:openjdk:1.6.0:upda</pre>
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-1">Modified Analysis by NIST</span> <span
+					data-testid="vuln-change-history-date-1">9/23/2019 3:36:24 PM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">CPE Configuration</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								
+								<strong data-testid="vuln-change-history-1-showing"
+								>Record truncated, showing 500 of 2061 characters.</strong> <br/>
+								
+                             <a href="/vuln/detail/CVE-2013-0169/change-record?changeRecordedOn=09/23/2019T15:36:24.557-0400">View Entire Change Record</a><br/>
+								<pre>OR
+     *cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+     *cpe:2.3:a:openssl:openssl:0.9.8:*:*:*:*:*:*:*
+     *cpe:2.3:a:openssl:openssl:0.9.8a:*:*:*:*:*:*:*
+     *cpe:2.3:a:openssl:openssl:0.9.8b:*:*:*:*:*:*:*
+     *cpe:2.3:a:openssl:openssl:0.9.8c:*:*:*:*:*:*:*
+     *cpe:2.3:a:openssl:openssl:0.9.8d:*:*:*:*:*:*:*
+     *cpe:2.3:a:openssl:openssl:0.9.8f:*:*:*:*:*:*:*
+     *cpe:2.3:a:openssl:openssl:0.9.8g:*:*:*:*:*:*:*
+     *cpe:2.3:a:openssl:openssl:0.9.8h:*:*:*:*:*:*:*
+     *cpe:2.3:a:openssl:op</pre>
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>OR
+     *cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* versions from (including) 0.9.8 up to (including) 0.9.8x
+     *cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* versions from (including) 1.0.0 up to (including) 1.0.0j
+     *cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* versions from (including) 1.0.1 up to (including) 1.0.1d</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Evaluator Description</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>Per http://www.openssl.org/news/vulnerabilities.html:
+Fixed in OpenSSL 1.0.1d (Affected 1.0.1c, 1.0.1b, 1.0.1a, 1.0.1) 
+Fixed in OpenSSL 1.0.0k (Affected 1.0.0j, 1.0.0i, 1.0.0g, 1.0.0f, 1.0.0e, 1.0.0d, 1.0.0c, 1.0.0b, 1.0.0a, 1.0.0) 
+Fixed in OpenSSL 0.9.8y (Affected 0.9.8x, 0.9.8w, 0.9.8v, 0.9.8u, 0.9.8t, 0.9.8s, 0.9.8r, 0.9.8q, 0.9.8p, 0.9.8o, 0.9.8n, 0.9.8m, 0.9.8l, 0.9.8k, 0.9.8j, 0.9.8i, 0.9.8h, 0.9.8g, 0.9.8f, 0.9.8d, 0.9.8c, 0.9.8b, 0.9.8a, 0.9.8)</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								
+								<strong data-testid="vuln-change-history-1-showing"
+								
+								>Record truncated, showing 500 of 592 characters.</strong> <br/>
+								
+                             <a href="/vuln/detail/CVE-2013-0169/change-record?changeRecordedOn=09/23/2019T15:36:24.557-0400">View Entire Change Record</a><br />
+								<pre>Per http://www.openssl.org/news/vulnerabilities.html:
+Fixed in OpenSSL 1.0.1d (Affected 1.0.1c, 1.0.1b, 1.0.1a, 1.0.1) 
+Fixed in OpenSSL 1.0.0k (Affected 1.0.0j, 1.0.0i, 1.0.0g, 1.0.0f, 1.0.0e, 1.0.0d, 1.0.0c, 1.0.0b, 1.0.0a, 1.0.0) 
+Fixed in OpenSSL 0.9.8y (Affected 0.9.8x, 0.9.8w, 0.9.8v, 0.9.8u, 0.9.8t, 0.9.8s, 0.9.8r, 0.9.8q, 0.9.8p, 0.9.8o, 0.9.8n, 0.9.8m, 0.9.8l, 0.9.8k, 0.9.8j, 0.9.8i, 0.9.8h, 0.9.8g, 0.9.8f, 0.9.8d, 0.9.8c, 0.9.8b, 0.9.8a, 0.9.8)
+
+Affected users should upgrade to OpenSSL</pre>
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://blog.fuseyism.com/index.php/2013/02/20/security-icedtea-2-1-6-2-2-6-2-3-7-for-openjdk-7-released/ No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://blog.fuseyism.com/index.php/2013/02/20/security-icedtea-2-1-6-2-2-6-2-3-7-for-openjdk-7-released/ Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://lists.apple.com/archives/security-announce/2013/Sep/msg00002.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://lists.apple.com/archives/security-announce/2013/Sep/msg00002.html Mailing List, Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://lists.fedoraproject.org/pipermail/package-announce/2013-April/101366.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://lists.fedoraproject.org/pipermail/package-announce/2013-April/101366.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2013-02/msg00020.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2013-02/msg00020.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2013-03/msg00000.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2013-03/msg00000.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2013-03/msg00002.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2013-03/msg00002.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2013-04/msg00020.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2013-04/msg00020.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00001.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00001.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00027.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00027.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00011.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00011.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=136396549913849&amp;w=2 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=136396549913849&amp;w=2 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=136432043316835&amp;w=2 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=136432043316835&amp;w=2 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=136439120408139&amp;w=2 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=136439120408139&amp;w=2 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=136733161405818&amp;w=2 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=136733161405818&amp;w=2 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=137545771702053&amp;w=2 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=137545771702053&amp;w=2 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://openwall.com/lists/oss-security/2013/02/05/24 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://openwall.com/lists/oss-security/2013/02/05/24 Mailing List</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-0587.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-0587.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-0782.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-0782.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-0783.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-0783.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-0833.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-0833.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-1455.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-1455.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-1456.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://rhn.redhat.com/errata/RHSA-2013-1456.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://secunia.com/advisories/53623 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://secunia.com/advisories/53623 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://secunia.com/advisories/55108 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://secunia.com/advisories/55108 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://secunia.com/advisories/55139 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://secunia.com/advisories/55139 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://secunia.com/advisories/55322 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://secunia.com/advisories/55322 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://secunia.com/advisories/55350 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://secunia.com/advisories/55350 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://secunia.com/advisories/55351 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://secunia.com/advisories/55351 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://security.gentoo.org/glsa/glsa-201406-32.xml No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://security.gentoo.org/glsa/glsa-201406-32.xml Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://support.apple.com/kb/HT5880 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://support.apple.com/kb/HT5880 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www-01.ibm.com/support/docview.wss?uid=swg21644047 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www-01.ibm.com/support/docview.wss?uid=swg21644047 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.debian.org/security/2013/dsa-2621 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.debian.org/security/2013/dsa-2621 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.debian.org/security/2013/dsa-2622 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.debian.org/security/2013/dsa-2622 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.isg.rhul.ac.uk/tls/TLStiming.pdf No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.isg.rhul.ac.uk/tls/TLStiming.pdf Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.kb.cert.org/vuls/id/737740 US Government Resource</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.kb.cert.org/vuls/id/737740 Third Party Advisory, US Government Resource</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.mandriva.com/security/advisories?name=MDVSA-2013:095 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.mandriva.com/security/advisories?name=MDVSA-2013:095 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.matrixssl.org/news.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.matrixssl.org/news.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.oracle.com/technetwork/topics/security/javacpufeb2013update-1905892.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.oracle.com/technetwork/topics/security/javacpufeb2013update-1905892.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.securityfocus.com/bid/57778 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.securityfocus.com/bid/57778 Third Party Advisory, VDB Entry</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.securitytracker.com/id/1029190 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.securitytracker.com/id/1029190 Third Party Advisory, VDB Entry</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.splunk.com/view/SP-CAAAHXG No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.splunk.com/view/SP-CAAAHXG Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.ubuntu.com/usn/USN-1735-1 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.ubuntu.com/usn/USN-1735-1 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>http://www.us-cert.gov/cas/techalerts/TA13-051A.html US Government Resource</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>http://www.us-cert.gov/cas/techalerts/TA13-051A.html Third Party Advisory, US Government Resource</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>https://cert-portal.siemens.com/productcert/pdf/ssa-556833.pdf No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>https://cert-portal.siemens.com/productcert/pdf/ssa-556833.pdf Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>https://lists.debian.org/debian-lts-announce/2018/09/msg00029.html No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>https://lists.debian.org/debian-lts-announce/2018/09/msg00029.html Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18841 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18841 Tool Signature</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19016 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19016 Tool Signature</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19424 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19424 Tool Signature</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19540 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19540 Tool Signature</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19608 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19608 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>https://puppet.com/security/cve/cve-2013-0169 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>https://puppet.com/security/cve/cve-2013-0169 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&amp;docId=emr_na-c03883001 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&amp;docId=emr_na-c03883001 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-1">
+						<td
+							data-testid="vuln-change-history-1-action">Changed</td>
+						<td
+							data-testid="vuln-change-history-1-type">Reference Type</td>
+						<td data-testid="vuln-change-history-1-old">
+							
+							
+							
+								<pre>https://wiki.mageia.org/en/Support/Advisories/MGASA-2013-0084 No Types Assigned</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-1-new">
+							
+								<pre>https://wiki.mageia.org/en/Support/Advisories/MGASA-2013-0084 Third Party Advisory</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-2">CVE Modified by Red Hat, Inc.</span> <span
+					data-testid="vuln-change-history-date-2">7/09/2019 9:15:11 AM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-2">
+						<td
+							data-testid="vuln-change-history-2-action">Added</td>
+						<td
+							data-testid="vuln-change-history-2-type">Reference</td>
+						<td data-testid="vuln-change-history-2-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-2-new">
+							
+								<pre>https://cert-portal.siemens.com/productcert/pdf/ssa-556833.pdf [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-3">CVE Modified by Red Hat, Inc.</span> <span
+					data-testid="vuln-change-history-date-3">9/26/2018 6:29:00 AM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-3">
+						<td
+							data-testid="vuln-change-history-3-action">Added</td>
+						<td
+							data-testid="vuln-change-history-3-type">Reference</td>
+						<td data-testid="vuln-change-history-3-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-3-new">
+							
+								<pre>https://lists.debian.org/debian-lts-announce/2018/09/msg00029.html [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-4">CVE Modified by Red Hat, Inc.</span> <span
+					data-testid="vuln-change-history-date-4">8/08/2018 9:29:00 PM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-4">
+						<td
+							data-testid="vuln-change-history-4-action">Added</td>
+						<td
+							data-testid="vuln-change-history-4-type">Reference</td>
+						<td data-testid="vuln-change-history-4-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-4-new">
+							
+								<pre>https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&amp;docId=emr_na-c03883001 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-5">CVE Modified by Red Hat, Inc.</span> <span
+					data-testid="vuln-change-history-date-5">12/08/2017 9:29:01 PM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-5">
+						<td
+							data-testid="vuln-change-history-5-action">Added</td>
+						<td
+							data-testid="vuln-change-history-5-type">Reference</td>
+						<td data-testid="vuln-change-history-5-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-5-new">
+							
+								<pre>https://puppet.com/security/cve/cve-2013-0169 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-6">CVE Modified by Red Hat, Inc.</span> <span
+					data-testid="vuln-change-history-date-6">9/18/2017 9:35:36 PM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-6">
+						<td
+							data-testid="vuln-change-history-6-action">Added</td>
+						<td
+							data-testid="vuln-change-history-6-type">Reference</td>
+						<td data-testid="vuln-change-history-6-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-6-new">
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18841 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-6">
+						<td
+							data-testid="vuln-change-history-6-action">Added</td>
+						<td
+							data-testid="vuln-change-history-6-type">Reference</td>
+						<td data-testid="vuln-change-history-6-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-6-new">
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19016 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-6">
+						<td
+							data-testid="vuln-change-history-6-action">Added</td>
+						<td
+							data-testid="vuln-change-history-6-type">Reference</td>
+						<td data-testid="vuln-change-history-6-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-6-new">
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19424 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-6">
+						<td
+							data-testid="vuln-change-history-6-action">Added</td>
+						<td
+							data-testid="vuln-change-history-6-type">Reference</td>
+						<td data-testid="vuln-change-history-6-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-6-new">
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19540 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-6">
+						<td
+							data-testid="vuln-change-history-6-action">Added</td>
+						<td
+							data-testid="vuln-change-history-6-type">Reference</td>
+						<td data-testid="vuln-change-history-6-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-6-new">
+							
+								<pre>https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19608 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-6">
+						<td
+							data-testid="vuln-change-history-6-action">Removed</td>
+						<td
+							data-testid="vuln-change-history-6-type">Reference</td>
+						<td data-testid="vuln-change-history-6-old">
+							
+							
+							
+								<pre>http://oval.mitre.org/repository/data/getDef?id=oval:org.mitre.oval:def:18841 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-6-new">
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-6">
+						<td
+							data-testid="vuln-change-history-6-action">Removed</td>
+						<td
+							data-testid="vuln-change-history-6-type">Reference</td>
+						<td data-testid="vuln-change-history-6-old">
+							
+							
+							
+								<pre>http://oval.mitre.org/repository/data/getDef?id=oval:org.mitre.oval:def:19016 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-6-new">
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-6">
+						<td
+							data-testid="vuln-change-history-6-action">Removed</td>
+						<td
+							data-testid="vuln-change-history-6-type">Reference</td>
+						<td data-testid="vuln-change-history-6-old">
+							
+							
+							
+								<pre>http://oval.mitre.org/repository/data/getDef?id=oval:org.mitre.oval:def:19424 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-6-new">
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-6">
+						<td
+							data-testid="vuln-change-history-6-action">Removed</td>
+						<td
+							data-testid="vuln-change-history-6-type">Reference</td>
+						<td data-testid="vuln-change-history-6-old">
+							
+							
+							
+								<pre>http://oval.mitre.org/repository/data/getDef?id=oval:org.mitre.oval:def:19540 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-6-new">
+								
+								
+						</td>
+					</tr>
+					<tr data-testid="vuln-change-history-6">
+						<td
+							data-testid="vuln-change-history-6-action">Removed</td>
+						<td
+							data-testid="vuln-change-history-6-type">Reference</td>
+						<td data-testid="vuln-change-history-6-old">
+							
+							
+							
+								<pre>http://oval.mitre.org/repository/data/getDef?id=oval:org.mitre.oval:def:19608 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br/>
+								
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-6-new">
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-7">CVE Modified by Red Hat, Inc.</span> <span
+					data-testid="vuln-change-history-date-7">12/02/2016 10:00:01 PM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-7">
+						<td
+							data-testid="vuln-change-history-7-action">Added</td>
+						<td
+							data-testid="vuln-change-history-7-type">Reference</td>
+						<td data-testid="vuln-change-history-7-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-7-new">
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00011.html [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-8">CVE Modified by Red Hat, Inc.</span> <span
+					data-testid="vuln-change-history-date-8">11/28/2016 2:08:37 PM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-8">
+						<td
+							data-testid="vuln-change-history-8-action">Added</td>
+						<td
+							data-testid="vuln-change-history-8-type">Reference</td>
+						<td data-testid="vuln-change-history-8-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-8-new">
+							
+								<pre>http://www.securityfocus.com/bid/57778 [No Types Assigned]</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-9">CVE Modified by Red Hat, Inc.</span> <span
+					data-testid="vuln-change-history-date-9">8/22/2016 10:06:07 PM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-9">
+						<td
+							data-testid="vuln-change-history-9-action">Added</td>
+						<td
+							data-testid="vuln-change-history-9-type">Reference</td>
+						<td data-testid="vuln-change-history-9-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-9-new">
+							
+								<pre>http://marc.info/?l=bugtraq&amp;m=136432043316835&amp;w=2</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-10">CVE Modified by Red Hat, Inc.</span> <span
+					data-testid="vuln-change-history-date-10">3/26/2015 9:59:04 PM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-testid="vuln-change-history-10">
+						<td
+							data-testid="vuln-change-history-10-action">Added</td>
+						<td
+							data-testid="vuln-change-history-10-type">Reference</td>
+						<td data-testid="vuln-change-history-10-old">
+							
+							
+								
+								
+							
+							
+						</td>
+							
+						<td data-testid="vuln-change-history-10-new">
+							
+								<pre>http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00027.html</pre>
+								 <br/>
+								
+                             <br />
+								
+								
+								
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	
+		<div class="vuln-change-history-container"  
+			style="display:none">
+			 
+			<h4>
+				<strong><span
+					data-testid="vuln-change-history-type-11">Initial CVE Analysis</span> <span
+					data-testid="vuln-change-history-date-11">2/11/2013 10:04:00 AM</span></strong>
+			</h4>
+
+
+			<table
+				class="table table-striped table-condensed table-bordered detail-table"
+				data-testid="vuln-change-history-table">
+				<thead> 
+					<tr>
+						<th>Action</th>
+						<th>Type</th>
+						<th>Old Value</th>
+						<th>New Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+
+
+
+		</div> 
+	</div>
+										 
+									</div>
+								
+								</div>
+							</div>
+
+
+							<div class="col-lg-3 col-md-5 col-sm-12">
+
+								<div class="bs-callout bs-callout-info">
+									<h4>Quick Info</h4>
+									<strong>CVE Dictionary Entry:</strong><br /> <a
+										target="_blank" data-testid="vuln-cve-dictionary-entry"
+										href="https://cve.org/CVERecord?id=CVE-2013-0169">CVE-2013-0169</a><br /> <strong>NVD
+										Published Date:</strong><br /> <span
+										data-testid="vuln-published-on">02/08/2013</span><br /> <strong>NVD
+										Last Modified:</strong><br /> <span
+										data-testid="vuln-last-modified-on">05/12/2023</span><br /> <strong>
+										Source:</strong><br /> <span
+										data-testid="vuln-current-description-source">Red Hat, Inc.</span><br />
+								</div>
+
+							</div>
+
+						</div>
+
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+		</div>
+	</div>
+	</main>
+	<footer id="footer" role="contentinfo">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-sm-12">
+					<ul class="social-list pull-right">
+						<li class="field-item service-twitter list-horiz"><a
+							href="https://twitter.com/NISTCyber" target="_blank"
+							class="social-btn social-btn--large extlink ext"> <i
+								class="fa fa-twitter fa-fw"><span class="element-invisible">twitter</span></i><span
+								class="ext"><span class="element-invisible"> (link
+										is external)</span></span>
+						</a></li>
+						<li class="field-item service-facebook list-horiz"><a
+							href="https://www.facebook.com/NIST" target="_blank"
+							class="social-btn social-btn--large extlink ext"> <i
+								class="fa fa-facebook fa-fw"><span class="element-invisible">facebook</span></i><span
+								class="ext"><span class="element-invisible"> (link
+										is external)</span></span></a></li>
+						<li class="field-item service-linkedin list-horiz"><a
+							href="https://www.linkedin.com/company/nist" target="_blank"
+							class="social-btn social-btn--large extlink ext"> <i
+								class="fa fa-linkedin fa-fw"><span class="element-invisible">linkedin</span></i><span
+								class="ext"><span class="element-invisible"> (link
+										is external)</span></span></a></li>
+						<li class="field-item service-youtube list-horiz"><a
+							href="https://www.youtube.com/user/USNISTGOV" target="_blank"
+							class="social-btn social-btn--large extlink ext"> <i
+								class="fa fa-youtube fa-fw"><span class="element-invisible">youtube</span></i><span
+								class="ext"><span class="element-invisible"> (link
+										is external)</span></span></a></li>
+						<li class="field-item service-rss list-horiz"><a
+							href="https://www.nist.gov/news-events/nist-rss-feeds"
+							target="_blank" class="social-btn social-btn--large extlink">
+								<i class="fa fa-rss fa-fw"><span class="element-invisible">rss</span></i>
+						</a></li>
+						<li class="field-item service-govdelivery list-horiz last"><a
+							href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3"
+							target="_blank" class="social-btn social-btn--large extlink ext">
+								<i class="fa fa-envelope fa-fw"><span
+									class="element-invisible">govdelivery</span></i><span class="ext"><span
+									class="element-invisible"> (link is external)</span></span>
+						</a></li>
+					</ul>
+					<span class="hidden-xs"> <a
+						title="National Institute of Standards and Technology" rel="home"
+						class="footer-nist-logo"> <img
+							src="/site-media/images/nist/nist-logo.png"
+							alt="National Institute of Standards and Technology logo" />
+					</a>
+					</span>
+				</div>
+			</div>
+			<div class="row hidden-sm hidden-md hidden-lg">
+				<div class="col-sm-12">
+					<a href="https://www.nist.gov"
+						title="National Institute of Standards and Technology" rel="home"
+						target="_blank" class="footer-nist-logo"> <img
+						src="/site-media/images/nist/nist-logo.png"
+						alt="National Institute of Standards and Technology logo" />
+					</a>
+				</div>
+			</div>
+
+			<div class="row footer-contact-container">
+				<div class="col-sm-6">
+					<strong>HEADQUARTERS</strong>
+					<br>
+					100 Bureau Drive
+					<br>
+					Gaithersburg, MD 20899
+					<br>
+					<a href="tel:301-975-2000">(301) 975-2000</a>
+					<br>
+					<br>
+					<a href="mailto:nvd@nist.gov">Webmaster</a> | <a
+						href="https://www.nist.gov/about-nist/contact-us">Contact Us</a>
+					| <a href="https://www.nist.gov/about-nist/visit"
+						style="display: inline-block;">Our Other Offices</a>
+				</div>
+				<div class="col-sm-6">
+					<div class="pull-right"
+						style="text-align:right">
+						<strong>Incident Response Assistance and Non-NVD Related<br>Technical Cyber Security Questions:</strong>
+						<br>
+						US-CERT Security Operations Center
+						<br> Email: <a href="mailto:soc@us-cert.gov">soc@us-cert.gov</a>
+						<br> Phone:	1-888-282-0870
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+			    <nav title="Footer Navigation" role="navigation"
+			    	 class="row footer-bottom-links-container">
+			    <!-- https://github.com/usnistgov/nist-header-footer/blob/nist-pages/boilerplate-footer.html -->
+      				<p>
+			          <a href="https://www.nist.gov/oism/site-privacy">Site Privacy</a>
+			        |
+			          <a href="https://www.nist.gov/oism/accessibility">Accessibility</a>
+			        |
+			          <a href="https://www.nist.gov/privacy">Privacy Program</a>
+			        |
+			          <a href="https://www.nist.gov/oism/copyrights">Copyrights</a>
+			        |
+			          <a href="https://www.commerce.gov/vulnerability-disclosure-policy">Vulnerability Disclosure</a>
+			        |
+			          <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+			        |
+			          <a href="https://www.nist.gov/foia">FOIA</a>
+			        |
+			          <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy</a>
+					|
+			          <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity</a>
+			        |
+			          <a href="https://www.nist.gov/nist-information-quality-standards">Information Quality Standards</a>
+			        |
+			          <a href="https://www.commerce.gov/">Commerce.gov</a>
+			        |
+			          <a href="https://www.science.gov/">Science.gov</a>
+			        |
+			          <a href="https://www.usa.gov/">USA.gov</a>
+            		</p>
+    			</nav>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
